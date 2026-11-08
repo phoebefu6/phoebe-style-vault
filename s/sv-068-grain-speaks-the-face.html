@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grain Speaks The Face - Style Vault</title><meta name="description" content="A large human face carved in shallow relief into plain timber, where the natural wood grain itself draws the wrinkles, cheeks and expression, knots and cracks l">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
+.tag.creative{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-creative.html">Creative</a> / Grain Speaks The Face</p><h1>Grain Speaks The Face</h1><p class="lede">SV-068</p><div class="cols"><div><div class="hero"><img src="../assets/works/sv-068-own.jpg" alt="The data science lifecycle, set in Grain Speaks The Face"></div><p class="cap">Example: The data science lifecycle, set in Grain Speaks The Face</p><h2>In plain words</h2><p class="plain">A large human face carved in shallow relief into plain timber, where the natural wood grain itself draws the wrinkles, cheeks and expression, knots and cracks left in. It feels warm, honest and weathered. What makes it this style is that the grain does the drawing - there is no carved outline.
+
+<strong>Best for:</strong> leadership and character stories; customer and employee portraits; personal brand about roots; workshop themes on authenticity. <strong>Avoid:</strong> text or lettering generated inside the image.</p><h2>Topics it fits</h2><ul class="topics"><li><strong>Leadership and character stories</strong><span>a face drawn by the wood&#x27;s own grain suggests character formed slowly, by what happened to you</span></li><li><strong>Customer and employee portraits</strong><span>keeping the defects in gives each person a dignified, unretouched look</span></li><li><strong>Personal brand about roots</strong><span>industrial lumber shaped into a specific expression ties a personal story to plain, real material</span></li><li><strong>Workshop themes on authenticity</strong><span>visible knots and cracks are a direct visual for not hiding flaws</span></li></ul><h2>Art style and layout</h2><ul class="dna"><li><b>core locked</b> [grain_does_the_drawing, no_carved_outline, flat_daylight, shallow_relief, defects_stay]</li><li><b>the tension</b> industrial lumber against a specific human expression, and enormous scale against</li><li><b>grain does the drawing</b> THE CARD, and the first thing MJ will break. Its reflex is to carve</li><li><b>flat daylight</b> one even overcast source, frontal, never raking. This is the opposite instruction</li><li><b>shallow relief</b> <code>no more than two centimetres</code>. Deep carving becomes a sculpture with its own</li><li><b>defects stay</b> knots, splits and checks must cross the face, not politely avoid it. A knot landing</li><li><b>palette</b> [bleached sapwood &quot;#E4D6BC, honey heartwood &quot;#C09A63, grain line &quot;#7A5A32, knot</li><li><b>negative space</b> none. The panel is total and the crop is arbitrary</li><li><b>era reference</b> devotional wood relief and contemporary monumental carving. **Do not name a living</li></ul><h3>What must stay, what may change</h3><p><strong>subject - ten far-apart FACES from ten different lives, one locked timber-relief language</strong> (a sleeping infant, a very old fisherman, a boxer mid-exhale, a nun, a teenager laughing, a stroke patient, a bride, a miner, a drowned saint, a newborn animal&#x27;s face). The timber, the grain direction, the shallow depth and the flat daylight never move. Never ten serene adults - the emotional range IS the sweep</p><h2>As JSON</h2><p class="lede">Paste this into a prompt or a skill to reuse the style.</p><button class="copy">Copy</button><pre><code id="json">{
+  &quot;id&quot;: &quot;SV-068&quot;,
+  &quot;name&quot;: &quot;Grain Speaks The Face&quot;,
+  &quot;audience&quot;: [
+    &quot;creative&quot;
+  ],
+  &quot;category&quot;: [
+    &quot;fine-art&quot;,
+    &quot;illustration&quot;
+  ],
+  &quot;format&quot;: [
+    &quot;poster&quot;,
+    &quot;illustration&quot;
+  ],
+  &quot;maker&quot;: &quot;diffusion&quot;,
+  &quot;keep_and_swap&quot;: &quot;**subject - ten far-apart FACES from ten different lives, one locked timber-relief language** (a sleeping infant, a very old fisherman, a boxer mid-exhale, a nun, a teenager laughing, a stroke patient, a bride, a miner, a drowned saint, a newborn animal&#x27;s face). The timber, the grain direction, the shallow depth and the flat daylight never move. Never ten serene adults - the emotional range IS the sweep&quot;,
+  &quot;style_dna&quot;: {
+    &quot;core_locked&quot;: &quot;[grain_does_the_drawing, no_carved_outline, flat_daylight, shallow_relief, defects_stay]&quot;,
+    &quot;the_tension&quot;: &quot;industrial lumber against a specific human expression, and enormous scale against&quot;,
+    &quot;grain_does_the_drawing&quot;: &quot;THE CARD, and the first thing MJ will break. Its reflex is to carve&quot;,
+    &quot;flat_daylight&quot;: &quot;one even overcast source, frontal, never raking. This is the opposite instruction&quot;,
+    &quot;shallow_relief&quot;: &quot;`no more than two centimetres`. Deep carving becomes a sculpture with its own&quot;,
+    &quot;defects_stay&quot;: &quot;knots, splits and checks must cross the face, not politely avoid it. A knot landing&quot;,
+    &quot;palette&quot;: &quot;[bleached sapwood \&quot;#E4D6BC, honey heartwood \&quot;#C09A63, grain line \&quot;#7A5A32, knot&quot;,
+    &quot;negative_space&quot;: &quot;none. The panel is total and the crop is arbitrary&quot;,
+    &quot;era_reference&quot;: &quot;devotional wood relief and contemporary monumental carving. **Do not name a living&quot;
+  },
+  &quot;elements&quot;: {
+    &quot;subject&quot;: &quot;**one human face at architectural scale, and nothing else.** No shoulders, no hands, no&quot;,
+    &quot;composition&quot;: &quot;edge to edge, the panel IS the frame. Centred, frontal, symmetrical. No wall, no room,&quot;,
+    &quot;light&quot;: &quot;**flat even overcast daylight, straight on.** This is counterintuitive and it is the card.&quot;,
+    &quot;palette&quot;: &quot;one timber family only - pale bleached blonde to warm honey, with the darker grain lines and&quot;,
+    &quot;material/texture&quot;: &quot;raw unfinished sawn timber. Knots, splits, checks and sapwood all left in and&quot;,
+    &quot;mood&quot;: &quot;patient and unsentimental. A face that was already in the plank, found rather than made&quot;,
+    &quot;camera/render&quot;: &quot;photographic, straight-on, macro sharpness across the whole plane, no vignette, no&quot;
+  },
+  &quot;palette_hex&quot;: [
+    &quot;#e4d6bc&quot;,
+    &quot;#c09a63&quot;,
+    &quot;#7a5a32&quot;
+  ],
+  &quot;topics&quot;: [
+    {
+      &quot;topic&quot;: &quot;Leadership and character stories&quot;,
+      &quot;why&quot;: &quot;a face drawn by the wood&#x27;s own grain suggests character formed slowly, by what happened to you&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Customer and employee portraits&quot;,
+      &quot;why&quot;: &quot;keeping the defects in gives each person a dignified, unretouched look&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Personal brand about roots&quot;,
+      &quot;why&quot;: &quot;industrial lumber shaped into a specific expression ties a personal story to plain, real material&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Workshop themes on authenticity&quot;,
+      &quot;why&quot;: &quot;visible knots and cracks are a direct visual for not hiding flaws&quot;
+    }
+  ]
+}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag creative">Creative</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-fine-art.html">Fine art</a><a class="tag" href="../c/category-illustration.html">Illustration</a></dd><dt>Good as</dt><dd>poster, illustration</dd><dt>How it is made</dt><dd>diffusion</dd><dt>Palette</dt><dd><div class="sw"><span title="#e4d6bc" style="background:#e4d6bc"></span><span title="#c09a63" style="background:#c09a63"></span><span title="#7a5a32" style="background:#7a5a32"></span></div></dd></dl></aside></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>

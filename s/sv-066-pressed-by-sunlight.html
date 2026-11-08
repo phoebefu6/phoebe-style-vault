@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pressed By Sunlight - Style Vault</title><meta name="description" content="A dried, flat found object - a dragonfly wing, a fish skeleton, a torn banknote - held against a warm wall by one sharp edge of sunlight, with its shadow as imp">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
+.tag.creative{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-creative.html">Creative</a> / Pressed By Sunlight</p><h1>Pressed By Sunlight</h1><p class="lede">SV-066</p><div class="cols"><div><div class="hero"><img src="../assets/works/sv-066-own.jpg" alt="The data science lifecycle, set in Pressed By Sunlight"></div><p class="cap">Example: The data science lifecycle, set in Pressed By Sunlight</p><h2>In plain words</h2><p class="plain">A dried, flat found object - a dragonfly wing, a fish skeleton, a torn banknote - held against a warm wall by one sharp edge of sunlight, with its shadow as important as the object. It feels still, warm and slightly melancholy, like a specimen in a museum drawer. What makes it this style is the one straight beam of light and the shadow standing beside the thing as its equal.
+
+<strong>Best for:</strong> lessons from failed projects; reflective personal essays; legacy systems and retirement; gallery pieces on memory. <strong>Avoid:</strong> text or lettering generated inside the image.</p><h2>Topics it fits</h2><ul class="topics"><li><strong>Lessons from failed projects</strong><span>a dry, finished specimen under one clear light suits a calm look back at what did not survive</span></li><li><strong>Reflective personal essays</strong><span>the shadow as co-subject gives the piece a second voice that matches a thoughtful post</span></li><li><strong>Legacy systems and retirement</strong><span>a dead but beautiful specimen frames decommissioning with respect rather than blame</span></li><li><strong>Gallery pieces on memory</strong><span>a weightless object pinned by nothing but light makes a strong single image for a quiet wall</span></li></ul><h2>Art style and layout</h2><ul class="dna"><li><b>core locked</b> [shadow_is_co_subject, one_straight_light_edge, one_warm_family_no_cool, vertical_grain_ground, deep_foreground_bokeh, specimen_is_dead_and_flat]</li><li><b>the tension</b> <strong>a thing with no substance pinning a thing with no life.</strong> The leaf is weightless, dry and finished; the beam that holds it against the wall is nothing at all. If either the specimen looks alive or the light looks soft, there is no card left</li><li><b>shadow is co subject</b> THE SIGNATURE, and the thing a model will quietly drop. The cast shadow must be sharp, separate, and roughly as visually loud as the specimen - say *&quot;its own cast shadow thrown sharp onto the wood beside it, reading as strongly as the specimen itself&quot;* every time. A soft contact shadow means the card failed</li><li><b>one straight light edge</b> a hard straight diagonal boundary between lit wall and dark wall. This is what makes it graphic rather than pretty. If the wall lights evenly, it becomes stock photography of a leaf</li><li><b>one warm family no cool</b> honey to umber and nothing else. <strong>One cool reflection kills it</strong> - the same rule SV-045 carries, arrived at from the opposite direction (daylight, not candlelight)</li><li><b>vertical grain ground</b> the grain runs vertically and the shadow edge runs diagonally, so the two line systems disagree. That disagreement is doing real work; a plain plaster wall removes it</li><li><b>deep foreground bokeh</b> large soft amber discs along the bottom edge, well out of focus, same specimen repeated. Gives depth to what is otherwise a flat wall and stops it reading as a scan</li><li><b>specimen is dead and flat</b> dried, pressed, shed, discarded. <strong>Not ten pretty botanicals</strong> - see the axis line. Translucency is the price of entry: the light has to get partway through</li><li><b>palette</b> [lit wood &quot;#C8A06A, shadowed wood &quot;#7A5636, deep ground &quot;#2E2015, dried leaf gold &quot;#E0B858, leaf highlight &quot;#F2D593, foreground bokeh &quot;#D9A84E]</li><li><b>negative space</b> the empty lit wall in the top half, and the dark plane on the right. Both are load-bearing - crop them out and the card is a close-up of a leaf</li><li><b>era reference</b> Japanese domestic still-life photography and the botanical-pressing tradition, shot as available light rather than as a studio set. <strong>Do not name a living artist</strong></li></ul><h3>What must stay, what may change</h3><p><strong>subject - ten far-apart FOUND FLAT THINGS held against the same lit wall</strong> (a dragonfly wing, a fish skeleton, a cicada shell, a torn banknote, a shed snake skin, a dried squid, a maple key, a moth, a sheet of pressed seaweed, a used tea bag opened out). NOT ten leaves and NOT ten pretty botanicals - the wall, the beam and the shadow stay locked verbatim, only the specimen moves. Every candidate must have a silhouette with internal structure, because the shadow is doing half the drawing</p><h2>As JSON</h2><p class="lede">Paste this into a prompt or a skill to reuse the style.</p><button class="copy">Copy</button><pre><code id="json">{
+  &quot;id&quot;: &quot;SV-066&quot;,
+  &quot;name&quot;: &quot;Pressed By Sunlight&quot;,
+  &quot;audience&quot;: [
+    &quot;creative&quot;
+  ],
+  &quot;category&quot;: [
+    &quot;photography&quot;,
+    &quot;fine-art&quot;
+  ],
+  &quot;format&quot;: [
+    &quot;card&quot;,
+    &quot;style-study&quot;
+  ],
+  &quot;maker&quot;: &quot;diffusion&quot;,
+  &quot;keep_and_swap&quot;: &quot;**subject - ten far-apart FOUND FLAT THINGS held against the same lit wall** (a dragonfly wing, a fish skeleton, a cicada shell, a torn banknote, a shed snake skin, a dried squid, a maple key, a moth, a sheet of pressed seaweed, a used tea bag opened out). NOT ten leaves and NOT ten pretty botanicals - the wall, the beam and the shadow stay locked verbatim, only the specimen moves. Every candidate must have a silhouette with internal structure, because the shadow is doing half the drawing&quot;,
+  &quot;style_dna&quot;: {
+    &quot;core_locked&quot;: &quot;[shadow_is_co_subject, one_straight_light_edge, one_warm_family_no_cool, vertical_grain_ground, deep_foreground_bokeh, specimen_is_dead_and_flat]&quot;,
+    &quot;the_tension&quot;: &quot;**a thing with no substance pinning a thing with no life.** The leaf is weightless, dry and finished; the beam that holds it against the wall is nothing at all. If either the specimen looks alive or the light looks soft, there is no card left&quot;,
+    &quot;shadow_is_co_subject&quot;: &quot;THE SIGNATURE, and the thing a model will quietly drop. The cast shadow must be sharp, separate, and roughly as visually loud as the specimen - say *\&quot;its own cast shadow thrown sharp onto the wood beside it, reading as strongly as the specimen itself\&quot;* every time. A soft contact shadow means the card failed&quot;,
+    &quot;one_straight_light_edge&quot;: &quot;a hard straight diagonal boundary between lit wall and dark wall. This is what makes it graphic rather than pretty. If the wall lights evenly, it becomes stock photography of a leaf&quot;,
+    &quot;one_warm_family_no_cool&quot;: &quot;honey to umber and nothing else. **One cool reflection kills it** - the same rule SV-045 carries, arrived at from the opposite direction (daylight, not candlelight)&quot;,
+    &quot;vertical_grain_ground&quot;: &quot;the grain runs vertically and the shadow edge runs diagonally, so the two line systems disagree. That disagreement is doing real work; a plain plaster wall removes it&quot;,
+    &quot;deep_foreground_bokeh&quot;: &quot;large soft amber discs along the bottom edge, well out of focus, same specimen repeated. Gives depth to what is otherwise a flat wall and stops it reading as a scan&quot;,
+    &quot;specimen_is_dead_and_flat&quot;: &quot;dried, pressed, shed, discarded. **Not ten pretty botanicals** - see the axis line. Translucency is the price of entry: the light has to get partway through&quot;,
+    &quot;palette&quot;: &quot;[lit wood \&quot;#C8A06A, shadowed wood \&quot;#7A5636, deep ground \&quot;#2E2015, dried leaf gold \&quot;#E0B858, leaf highlight \&quot;#F2D593, foreground bokeh \&quot;#D9A84E]&quot;,
+    &quot;negative_space&quot;: &quot;the empty lit wall in the top half, and the dark plane on the right. Both are load-bearing - crop them out and the card is a close-up of a leaf&quot;,
+    &quot;era_reference&quot;: &quot;Japanese domestic still-life photography and the botanical-pressing tradition, shot as available light rather than as a studio set. **Do not name a living artist**&quot;
+  },
+  &quot;elements&quot;: {
+    &quot;subject&quot;: &quot;**one dried, flat, structural found object** pressed against a wall - never a fresh plant, never a styled bouquet. It must be past its life and thin enough for light to half-pass through&quot;,
+    &quot;composition&quot;: &quot;**vertical 9:16, and the subject sits low.** The top half is empty lit wall. One straight diagonal shadow edge runs corner-wards and splits the wall into a lit plane and a dark plane. The specimen crosses that edge or sits just inside the light&quot;,
+    &quot;light&quot;: &quot;**one low hard raking sun, no fill.** The light is the subject. Its edge must be a clean straight line, not a soft gradient - a window frame or a door jamb is implied but never shown&quot;,
+    &quot;palette&quot;: &quot;**one warm family end to end** - honey, wheat, amber, deep umber. No cool tone, no green, no grey. The contrast is lit-warm against dark-warm, never warm against cool&quot;,
+    &quot;material/texture&quot;: &quot;**vertical wood grain as the whole ground** - fine, regular, slightly fibrous, holding the light in long parallel streaks. The specimen is dry, veined, semi-translucent, faintly crumpled&quot;,
+    &quot;mood&quot;: &quot;quiet, still, late in the day, nobody in the room. Domestic rather than curatorial - this is a wall, not a studio sweep&quot;,
+    &quot;camera/render&quot;: &quot;macro photograph at f/2-ish, subject plane sharp, a deep out-of-focus foreground of large amber discs along the bottom edge, no grade, no vignette, no bloom&quot;
+  },
+  &quot;palette_hex&quot;: [
+    &quot;#c8a06a&quot;,
+    &quot;#7a5636&quot;,
+    &quot;#2e2015&quot;,
+    &quot;#e0b858&quot;,
+    &quot;#f2d593&quot;,
+    &quot;#d9a84e&quot;
+  ],
+  &quot;topics&quot;: [
+    {
+      &quot;topic&quot;: &quot;Lessons from failed projects&quot;,
+      &quot;why&quot;: &quot;a dry, finished specimen under one clear light suits a calm look back at what did not survive&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Reflective personal essays&quot;,
+      &quot;why&quot;: &quot;the shadow as co-subject gives the piece a second voice that matches a thoughtful post&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Legacy systems and retirement&quot;,
+      &quot;why&quot;: &quot;a dead but beautiful specimen frames decommissioning with respect rather than blame&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Gallery pieces on memory&quot;,
+      &quot;why&quot;: &quot;a weightless object pinned by nothing but light makes a strong single image for a quiet wall&quot;
+    }
+  ]
+}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag creative">Creative</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-photography.html">Photography</a><a class="tag" href="../c/category-fine-art.html">Fine art</a></dd><dt>Good as</dt><dd>card, style-study</dd><dt>How it is made</dt><dd>diffusion</dd><dt>Palette</dt><dd><div class="sw"><span title="#c8a06a" style="background:#c8a06a"></span><span title="#7a5636" style="background:#7a5636"></span><span title="#2e2015" style="background:#2e2015"></span><span title="#e0b858" style="background:#e0b858"></span><span title="#f2d593" style="background:#f2d593"></span><span title="#d9a84e" style="background:#d9a84e"></span></div></dd></dl></aside></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>
