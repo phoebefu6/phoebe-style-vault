@@ -7,9 +7,11 @@ edit a style in the store, then rerun:
 
     python3 build.py          # writes index.html, c/*.html, s/*.html, assets/
     python3 build.py --check  # exit 1 if any published text breaks a text rule
+    python3 build.py --all    # LOCAL PREVIEW: include rendered visuals not yet approved
 
 Three levels: home (audiences + categories) -> category page (style cards) -> style page.
-Illustrations are Phoebe's OWN finished gallery works only (works.json maps them). Pasted
+A style appears only when its card has a rendered example (`own_visual:`) AND Phoebe has
+approved it (`visual_approved: YYYY-MM-DD`, set only on her word). works.json is retired. Pasted
 inspiration samples (Styles/_samples) are never published - some carry other creators' marks.
 """
 from __future__ import annotations
@@ -112,10 +114,10 @@ def cat_label(c: str) -> str:
 
 
 def load() -> list[dict]:
-    works = json.loads((ROOT / "works.json").read_text())
     cards = []
     for c in styles.load():
-        if c["retired"]:
+        tags = styles._list(c["fm"].get("tags"))
+        if c["retired"] or "brand-locked" in tags:  # client brands never go public
             continue
         body = c["body"]
         d = dna(body)
@@ -141,9 +143,25 @@ def load() -> list[dict]:
             "topics": topics,
             "palette": hexes(d.get("palette", ""), c["elements"].get("palette", "")),
             "filed": (c["tried_on"][0] if isinstance(c["tried_on"], list) and c["tried_on"] else ""),
-            "works": works.get(sid, []),
+            # Only the rendered lifecycle example. The old design-build gallery charts
+            # (works.json) were dropped 2026-11-08: Phoebe called them "so ugly".
+            "works": own_visual(c),
+            "approved": bool(str(c["fm"].get("visual_approved", "")).strip()),
         })
-    return cards
+    # Phoebe 2026-11-08: "only display the style when there is actual visuals built",
+    # and only once SHE has approved the visual (card field `visual_approved: YYYY-MM-DD`).
+    # `--all` previews every rendered visual locally; never push an --all build.
+    return [c for c in cards if c["works"] and (c["approved"] or "--all" in sys.argv)]
+
+
+def own_visual(c: dict) -> list[dict]:
+    """The card's own example visual (`own_visual:` path, relative to the Styles folder)."""
+    rel = str(c["fm"].get("own_visual", "")).strip()
+    src = styles.STYLES / rel if rel else None
+    if not src or not src.is_file():
+        return []
+    return [{"folder": slug(f"{c['id']} own"), "src": str(src),
+             "title": f"The data science lifecycle, set in {c['name']}"}]
 
 
 # ------------------------------------------------------------------ images
@@ -154,7 +172,7 @@ def prep_images(cards: list[dict]) -> None:
     out.mkdir(parents=True, exist_ok=True)
     for c in cards:
         for w in c["works"]:
-            src = GALLERY / w["folder"] / "full.png"
+            src = Path(w["src"]) if w.get("src") else GALLERY / w["folder"] / "full.png"
             for size, suffix in ((1600, ""), (640, "-thumb")):
                 dst = out / f"{w['folder']}{suffix}.jpg"
                 if dst.exists() and dst.stat().st_mtime >= src.stat().st_mtime:
@@ -162,6 +180,11 @@ def prep_images(cards: list[dict]) -> None:
                 subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", "82",
                                 "-Z", str(size), str(src), "--out", str(dst)],
                                check=True, capture_output=True)
+    # prune: an image no longer shown (unapproved, dropped) must not stay public in assets/
+    keep = {f"{w['folder']}{x}.jpg" for c in cards for w in c["works"] for x in ("", "-thumb")}
+    for f in out.glob("*.jpg"):
+        if f.name not in keep:
+            f.unlink()
 
 
 def plate(c: dict, big: bool = False) -> str:
@@ -418,8 +441,7 @@ def home(cards: list[dict], gs: list[dict]) -> str:
     own = sum(1 for c in cards if c["works"])
     body = (f'<h1>Style Vault</h1><p class="lede">{len(cards)} visual styles, each a recipe for explaining an '
             f'idea. Start from who you are talking to, or from the kind of picture you need. '
-            f'{own} styles already have a finished piece of my own; the rest show their palette until '
-            f'their first render.</p>'
+            f'Every style here has a finished example of my own; new styles appear once theirs is made.</p>'
             f'<div id="lib">{toolbar(False, "Search styles, topics, formats")}'
             + block("audience", "By audience", "Who is in the room decides how loud the picture may be.")
             + block("category", "By category", "The kind of picture: chart, illustration, comic, poster and more.")
@@ -459,7 +481,8 @@ def style_page(c: dict, gs: list[dict]) -> str:
     if c["works"]:
         w = c["works"][0]
         art = (f'<div class="hero"><img src="../assets/works/{w["folder"]}.jpg" alt="{esc(w["title"])}"></div>'
-               f'<p class="cap">My own work in this style: <a href="{GALLERY_URL}">{esc(w["title"])}</a></p>')
+               + (f'<p class="cap">Example: {esc(w["title"])}</p>' if w.get("src") else
+               f'<p class="cap">My own work in this style: <a href="{GALLERY_URL}">{esc(w["title"])}</a></p>'))
         for extra in c["works"][1:]:
             art += (f'<div class="hero"><img loading="lazy" src="../assets/works/{extra["folder"]}.jpg" '
                     f'alt="{esc(extra["title"])}"></div><p class="cap">{esc(extra["title"])}</p>')
