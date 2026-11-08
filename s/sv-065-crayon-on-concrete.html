@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crayon On Concrete - Style Vault</title><meta name="description" content="A real photo of huge serious infrastructure - a car park, a cooling tower, a flyover - with a genuinely childish crayon-style drawing on it at building scale. I">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
+.tag.creative{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-bold.html">Bold</a> / Crayon On Concrete</p><h1>Crayon On Concrete</h1><p class="lede">SV-065</p><div class="cols"><div><div class="hero"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Crayon On Concrete - first render pending"><rect width="400" height="300" fill="#fdeee7"/><rect x="0.00%" y="78%" width="20.10%" height="22%" fill="#a9a49b"/><rect x="20.00%" y="78%" width="20.10%" height="22%" fill="#6f6a61"/><rect x="40.00%" y="78%" width="20.10%" height="22%" fill="#d8232a"/><rect x="60.00%" y="78%" width="20.10%" height="22%" fill="#f3c218"/><rect x="80.00%" y="78%" width="20.10%" height="22%" fill="#1b57a6"/><text x="24" y="70" font-size="56" font-weight="700" fill="#9a3412" opacity="0.18" font-family="Georgia, serif">065</text><text x="24" y="150" font-size="30" font-weight="600" fill="#9a3412" font-family="Georgia, serif">Crayon On Concrete</text><text x="24" y="182" font-size="13" fill="#9a3412" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><p class="cap">No finished piece in this style yet - the bands are its palette.</p><h2>In plain words</h2><p class="plain">A real photo of huge serious infrastructure - a car park, a cooling tower, a flyover - with a genuinely childish crayon-style drawing on it at building scale. It feels funny and a little disarming, then impressive once you notice the size. What makes it this style is the gap between a mark made with no skill and the money and cranes it took to put it there.</p><h2>Topics it fits</h2><ul class="topics"><li><strong>Making complex systems approachable</strong><span>a child&#x27;s doodle on serious infrastructure tells the audience the heavy topic will be explained simply</span></li><li><strong>Launch hooks for internal platforms</strong><span>the scale gap grabs attention on a slide or feed before the details arrive</span></li><li><strong>Simplicity as a design value</strong><span>the drawing is deliberately basic while the structure still works, which is exactly the argument for simple design</span></li><li><strong>Workshop openers on creativity</strong><span>the playful mark on a grim building gives people permission to sketch badly in the session</span></li></ul><h2>Art style and layout</h2><ul class="dna"><li><b>core locked</b> [drawing_is_genuinely_childish, structure_still_works, flat_overcast_light, documentary_camera, scale_gap_is_the_subject]</li><li><b>the tension</b> a mark made with no skill, executed with total skill, at a scale only money and cranes can buy. If the drawing looks like a designer&#x27;s version of childish, the card is dead</li><li><b>drawing is genuinely childish</b> THE CARD, and the thing MJ will break instantly. Its reflex is charming professional illustration. <strong>Say &quot;exactly as a six-year-old would draw it - wobbling single-weight outlines, no perspective, colours that overshoot their own outlines&quot; every time.</strong> Any tapering line, any considered composition inside the drawing, any styled cuteness is a miss</li><li><b>structure still works</b> cars parked at it, cables live, lights on, rust in the right places. An abandoned building makes it street art; a working one makes it strange</li><li><b>flat overcast light</b> no sunset, no long shadows, no wet reflections. This is also the anti-sameness lever - the fired week before this card was written was dark-and-lit-by-points three runs in a row</li><li><b>documentary camera</b> 50mm, street level, straight-on, sharp, no grade. Not a drone, not a wide-angle hero shot, not tilted</li><li><b>palette</b> [concrete &quot;#A9A49B with staining &quot;#6F6A61, under crayon primaries &quot;#D8232A &quot;#F3C218 &quot;#1B57A6 &quot;#3F9142; no pastels, no tints, no gradients]</li><li><b>negative space</b> the sky, flat and featureless and uninteresting on purpose</li><li><b>era reference</b> post-war civic concrete photographed in the deadpan topographic tradition, with contemporary large-scale naive muralism on top. <strong>Do not name a living artist</strong></li></ul><h3>What must stay, what may change</h3><p><strong>subject - ten far-apart pieces of SERIOUS INFRASTRUCTURE wearing the same childish drawing</strong> (a brutalist car park, a grain silo, a motorway flyover, a nuclear cooling tower, a container crane, a water treatment plant, a power substation, a multi-storey hospital wing, a lock gate, a grid of social housing). NOT ten pretty buildings - the card only works when the structure is humourless. The crayon language stays locked</p><h2>As JSON</h2><p class="lede">Paste this into a prompt or a skill to reuse the style.</p><button class="copy">Copy</button><pre><code id="json">{
+  &quot;id&quot;: &quot;SV-065&quot;,
+  &quot;name&quot;: &quot;Crayon On Concrete&quot;,
+  &quot;audience&quot;: [
+    &quot;bold&quot;,
+    &quot;creative&quot;
+  ],
+  &quot;category&quot;: [
+    &quot;photography&quot;,
+    &quot;illustration&quot;
+  ],
+  &quot;format&quot;: [
+    &quot;illustration&quot;,
+    &quot;poster&quot;
+  ],
+  &quot;maker&quot;: &quot;diffusion&quot;,
+  &quot;keep_and_swap&quot;: &quot;**subject - ten far-apart pieces of SERIOUS INFRASTRUCTURE wearing the same childish drawing** (a brutalist car park, a grain silo, a motorway flyover, a nuclear cooling tower, a container crane, a water treatment plant, a power substation, a multi-storey hospital wing, a lock gate, a grid of social housing). NOT ten pretty buildings - the card only works when the structure is humourless. The crayon language stays locked&quot;,
+  &quot;style_dna&quot;: {
+    &quot;core_locked&quot;: &quot;[drawing_is_genuinely_childish, structure_still_works, flat_overcast_light, documentary_camera, scale_gap_is_the_subject]&quot;,
+    &quot;the_tension&quot;: &quot;a mark made with no skill, executed with total skill, at a scale only money and cranes can buy. If the drawing looks like a designer&#x27;s version of childish, the card is dead&quot;,
+    &quot;drawing_is_genuinely_childish&quot;: &quot;THE CARD, and the thing MJ will break instantly. Its reflex is charming professional illustration. **Say \&quot;exactly as a six-year-old would draw it - wobbling single-weight outlines, no perspective, colours that overshoot their own outlines\&quot; every time.** Any tapering line, any considered composition inside the drawing, any styled cuteness is a miss&quot;,
+    &quot;structure_still_works&quot;: &quot;cars parked at it, cables live, lights on, rust in the right places. An abandoned building makes it street art; a working one makes it strange&quot;,
+    &quot;flat_overcast_light&quot;: &quot;no sunset, no long shadows, no wet reflections. This is also the anti-sameness lever - the fired week before this card was written was dark-and-lit-by-points three runs in a row&quot;,
+    &quot;documentary_camera&quot;: &quot;50mm, street level, straight-on, sharp, no grade. Not a drone, not a wide-angle hero shot, not tilted&quot;,
+    &quot;palette&quot;: &quot;[concrete \&quot;#A9A49B with staining \&quot;#6F6A61, under crayon primaries \&quot;#D8232A \&quot;#F3C218 \&quot;#1B57A6 \&quot;#3F9142; no pastels, no tints, no gradients]&quot;,
+    &quot;negative_space&quot;: &quot;the sky, flat and featureless and uninteresting on purpose&quot;,
+    &quot;era_reference&quot;: &quot;post-war civic concrete photographed in the deadpan topographic tradition, with contemporary large-scale naive muralism on top. **Do not name a living artist**&quot;
+  },
+  &quot;elements&quot;: {
+    &quot;subject&quot;: &quot;one piece of humourless working infrastructure, whole, wearing a child&#x27;s drawing at its own scale. **The building is still in use** - not abandoned, not a ruin, not a gallery&quot;,
+    &quot;composition&quot;: &quot;documentary and dead-on. Straight-on elevation from across the road, horizon level, structure filling most of the frame, a strip of ordinary ground at the bottom. The drawing is centred on the facade, not the frame&quot;,
+    &quot;light&quot;: &quot;**flat overcast daylight.** Deliberately undramatic - the moment the light gets beautiful the picture becomes an art photograph and the joke evaporates&quot;,
+    &quot;palette&quot;: &quot;concrete grey-beige and weather-stain under **crayon-box primaries** - post-box red, school-bus yellow, primary blue, grass green. Six colours at most, all flat and opaque&quot;,
+    &quot;material/texture&quot;: &quot;real concrete - shutter lines, staining, patched repairs, streaks. The paint on top is flat and opaque and slightly over the edges, like a big brush doing a small hand&#x27;s drawing&quot;,
+    &quot;mood&quot;: &quot;deadpan. Nobody in the picture finds it remarkable. The tenderness is entirely in the gap between the mark and the mass&quot;,
+    &quot;camera/render&quot;: &quot;50mm documentary photograph, street level, sharp, no grade, no vignette, no golden hour, no drone&quot;
+  },
+  &quot;palette_hex&quot;: [
+    &quot;#a9a49b&quot;,
+    &quot;#6f6a61&quot;,
+    &quot;#d8232a&quot;,
+    &quot;#f3c218&quot;,
+    &quot;#1b57a6&quot;,
+    &quot;#3f9142&quot;
+  ],
+  &quot;topics&quot;: [
+    {
+      &quot;topic&quot;: &quot;Making complex systems approachable&quot;,
+      &quot;why&quot;: &quot;a child&#x27;s doodle on serious infrastructure tells the audience the heavy topic will be explained simply&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Launch hooks for internal platforms&quot;,
+      &quot;why&quot;: &quot;the scale gap grabs attention on a slide or feed before the details arrive&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Simplicity as a design value&quot;,
+      &quot;why&quot;: &quot;the drawing is deliberately basic while the structure still works, which is exactly the argument for simple design&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Workshop openers on creativity&quot;,
+      &quot;why&quot;: &quot;the playful mark on a grim building gives people permission to sketch badly in the session&quot;
+    }
+  ]
+}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag bold">Bold</span><span class="tag creative">Creative</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-photography.html">Photography</a><a class="tag" href="../c/category-illustration.html">Illustration</a></dd><dt>Good as</dt><dd>illustration, poster</dd><dt>How it is made</dt><dd>diffusion</dd><dt>Palette</dt><dd><div class="sw"><span title="#a9a49b" style="background:#a9a49b"></span><span title="#6f6a61" style="background:#6f6a61"></span><span title="#d8232a" style="background:#d8232a"></span><span title="#f3c218" style="background:#f3c218"></span><span title="#1b57a6" style="background:#1b57a6"></span><span title="#3f9142" style="background:#3f9142"></span></div></dd></dl></aside></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>

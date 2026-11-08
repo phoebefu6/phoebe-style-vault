@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>One Spot All Year - Style Vault</title><meta name="description" content="The same ordinary, overlooked spot - a ditch, a fence corner - painted from the exact same place ten times through frost, mud, haze, heat and snow. It feels pat">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
+.tag.creative{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-creative.html">Creative</a> / One Spot All Year</p><h1>One Spot All Year</h1><p class="lede">SV-059</p><div class="cols"><div><div class="hero"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="One Spot All Year - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0.00%" y="78%" width="20.10%" height="22%" fill="#a8763f"/><rect x="20.00%" y="78%" width="20.10%" height="22%" fill="#c9d2d6"/><rect x="40.00%" y="78%" width="20.10%" height="22%" fill="#4a5358"/><rect x="60.00%" y="78%" width="20.10%" height="22%" fill="#6b5540"/><rect x="80.00%" y="78%" width="20.10%" height="22%" fill="#9aa0a2"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">059</text><text x="24" y="150" font-size="30" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">One Spot All Year</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><p class="cap">No finished piece in this style yet - the bands are its palette.</p><h2>In plain words</h2><p class="plain">The same ordinary, overlooked spot - a ditch, a fence corner - painted from the exact same place ten times through frost, mud, haze, heat and snow. It feels patient and gently absurd, because serious landscape care is spent on a place nobody notices. What makes it this style is that the viewpoint never moves; only time does.</p><h2>Topics it fits</h2><ul class="topics"><li><strong>Change over time stories</strong><span>one fixed vantage point turns before and after into a sequence anyone can read without a chart</span></li><li><strong>A year of learning</strong><span>the same small place through every season mirrors a personal habit kept up quietly all year</span></li><li><strong>Culture and patience in leadership</strong><span>lavishing attention on an unremarkable spot shows that steady attention, not drama, is the message</span></li><li><strong>Workshop reflection exercises</strong><span>the locked frame invites people to spot what changed, which is a ready-made group prompt</span></li></ul><h2>Art style and layout</h2><ul class="dna"><li><b>core locked</b> [vantage_never_moves, place_is_beneath_notice, anchor_object_fixed, warm_ground_shows_through, no_weather_drama]</li><li><b>the tension</b> the full apparatus of serious landscape painting - the ground, the high horizon, the patience - spent on a drainage ditch. The frames are dignified and the subject does not deserve it, and that mismatch is the whole card</li><li><b>vantage never moves</b> THE CARD, and the thing that makes the sheet a *set* rather than ten pictures. MJ will re-frame by reflex. <strong>Repeat the vantage description word-for-word in all ten prompts</strong> and keep the anchor object in the same place. The season sweep only means something if the camera is a control</li><li><b>place is beneath notice</b> the instant the place becomes scenic - a lake, a hill, a pretty lane - the card is dead and it joins the 40,000 landscape listings. Say the ugly noun out loud: <code>loading bay</code>, <code>chain-link</code>, <code>drainage ditch</code></li><li><b>no weather drama</b> no sunsets, no storms rendered as spectacle, no rainbows, no god rays. A downpour is grey and boring and that is correct. This is the second thing standing between this card and generic landscape decor</li><li><b>warm ground shows through</b> a single warm imprimatura visible in every frame is what makes ten different palettes read as one hand. Without it a season sweep looks like ten unrelated paintings, which is the exact failure Phoebe named on 2026-09-04 - *&quot;the ten frames did not read as one style&quot;*</li><li><b>palette</b> [warm ground &quot;#A8763F showing through everywhere; season pairs on top - frost &quot;#C9D2D6 + &quot;#4A5358, thaw &quot;#6B5540 + &quot;#9AA0A2, heat &quot;#D9C79B + &quot;#E8E4D8, night rain &quot;#1C2622 + &quot;#D08A32]</li><li><b>negative space</b> the sky strip and any flat wall or tarmac are left thin and barely worked. Emptiness carries most of the frame in at least four of the ten</li><li><b>era reference</b> nineteenth-century observational landscape painting, plein-air oil sketching, long-term single-site photographic projects. <strong>Do not name a living artist</strong></li></ul><h3>What must stay, what may change</h3><p><strong>season - one locked vantage point, ten states of weather and year</strong> (hard frost, thaw mud, first green, flat white haze, heat shimmer, sudden downpour, dust, low gold, first snow, night rain). This is the vault&#x27;s FIRST season-axis sheet in 55. The subject and the camera never move; only the year does. NOT a subject sweep - the whole point is that the place is boring and constant</p><h2>As JSON</h2><p class="lede">Paste this into a prompt or a skill to reuse the style.</p><button class="copy">Copy</button><pre><code id="json">{
+  &quot;id&quot;: &quot;SV-059&quot;,
+  &quot;name&quot;: &quot;One Spot All Year&quot;,
+  &quot;audience&quot;: [
+    &quot;creative&quot;
+  ],
+  &quot;category&quot;: [
+    &quot;photography&quot;,
+    &quot;fine-art&quot;
+  ],
+  &quot;format&quot;: [
+    &quot;illustration&quot;,
+    &quot;poster&quot;
+  ],
+  &quot;maker&quot;: &quot;diffusion&quot;,
+  &quot;keep_and_swap&quot;: &quot;**season - one locked vantage point, ten states of weather and year** (hard frost, thaw mud, first green, flat white haze, heat shimmer, sudden downpour, dust, low gold, first snow, night rain). This is the vault&#x27;s FIRST season-axis sheet in 55. The subject and the camera never move; only the year does. NOT a subject sweep - the whole point is that the place is boring and constant&quot;,
+  &quot;style_dna&quot;: {
+    &quot;core_locked&quot;: &quot;[vantage_never_moves, place_is_beneath_notice, anchor_object_fixed, warm_ground_shows_through, no_weather_drama]&quot;,
+    &quot;the_tension&quot;: &quot;the full apparatus of serious landscape painting - the ground, the high horizon, the patience - spent on a drainage ditch. The frames are dignified and the subject does not deserve it, and that mismatch is the whole card&quot;,
+    &quot;vantage_never_moves&quot;: &quot;THE CARD, and the thing that makes the sheet a *set* rather than ten pictures. MJ will re-frame by reflex. **Repeat the vantage description word-for-word in all ten prompts** and keep the anchor object in the same place. The season sweep only means something if the camera is a control&quot;,
+    &quot;place_is_beneath_notice&quot;: &quot;the instant the place becomes scenic - a lake, a hill, a pretty lane - the card is dead and it joins the 40,000 landscape listings. Say the ugly noun out loud: `loading bay`, `chain-link`, `drainage ditch`&quot;,
+    &quot;no_weather_drama&quot;: &quot;no sunsets, no storms rendered as spectacle, no rainbows, no god rays. A downpour is grey and boring and that is correct. This is the second thing standing between this card and generic landscape decor&quot;,
+    &quot;warm_ground_shows_through&quot;: &quot;a single warm imprimatura visible in every frame is what makes ten different palettes read as one hand. Without it a season sweep looks like ten unrelated paintings, which is the exact failure Phoebe named on 2026-09-04 - *\&quot;the ten frames did not read as one style\&quot;*&quot;,
+    &quot;palette&quot;: &quot;[warm ground \&quot;#A8763F showing through everywhere; season pairs on top - frost \&quot;#C9D2D6 + \&quot;#4A5358, thaw \&quot;#6B5540 + \&quot;#9AA0A2, heat \&quot;#D9C79B + \&quot;#E8E4D8, night rain \&quot;#1C2622 + \&quot;#D08A32]&quot;,
+    &quot;negative_space&quot;: &quot;the sky strip and any flat wall or tarmac are left thin and barely worked. Emptiness carries most of the frame in at least four of the ten&quot;,
+    &quot;era_reference&quot;: &quot;nineteenth-century observational landscape painting, plein-air oil sketching, long-term single-site photographic projects. **Do not name a living artist**&quot;
+  },
+  &quot;elements&quot;: {
+    &quot;subject&quot;: &quot;a genuinely unremarkable place - a loading bay, a bus shelter, the end of a car park, a stretch of chain-link, a drainage ditch, a stairwell landing. **The place is chosen for being beneath notice.** It is the same place in every frame&quot;,
+    &quot;composition&quot;: &quot;locked. Same vantage, same focal length, same crop across all ten. High horizon, sky reduced to a strip along the top. One small man-made anchor object in the lower third - a bollard, a downpipe, a stacked pallet - in the identical position every time. The composition is a control, not a choice&quot;,
+    &quot;light&quot;: &quot;whatever that state of the year actually gives. Flat frost light, blown-out haze, the low raking gold of a short day. **No sunset, no golden hour drama, no god rays** - the light is reportage&quot;,
+    &quot;palette&quot;: &quot;derived entirely from the season state and nothing else. Frost is bone and slate; thaw is mud brown and tin; heat is bleached ochre and dust white; night rain is black-green and sodium orange. The warm ground colour shows through in every frame and is the one thread tying the set together&quot;,
+    &quot;material/texture&quot;: &quot;thin oil over a warm imprimatura, dragged and scumbled, the ground visible at the edges and in the thin passages. Some areas barely covered. **Not thick, not polished** - worked quickly, in front of the thing&quot;,
+    &quot;mood&quot;: &quot;patient, unsentimental, quietly monumental. Someone stood in the same ugly spot for a year because it was worth it, and does not explain why&quot;,
+    &quot;camera/render&quot;: &quot;observational plein-air oil painting, eye level, no lens character, no photographic bokeh&quot;
+  },
+  &quot;palette_hex&quot;: [
+    &quot;#a8763f&quot;,
+    &quot;#c9d2d6&quot;,
+    &quot;#4a5358&quot;,
+    &quot;#6b5540&quot;,
+    &quot;#9aa0a2&quot;,
+    &quot;#d9c79b&quot;
+  ],
+  &quot;topics&quot;: [
+    {
+      &quot;topic&quot;: &quot;Change over time stories&quot;,
+      &quot;why&quot;: &quot;one fixed vantage point turns before and after into a sequence anyone can read without a chart&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;A year of learning&quot;,
+      &quot;why&quot;: &quot;the same small place through every season mirrors a personal habit kept up quietly all year&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Culture and patience in leadership&quot;,
+      &quot;why&quot;: &quot;lavishing attention on an unremarkable spot shows that steady attention, not drama, is the message&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Workshop reflection exercises&quot;,
+      &quot;why&quot;: &quot;the locked frame invites people to spot what changed, which is a ready-made group prompt&quot;
+    }
+  ]
+}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag creative">Creative</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-photography.html">Photography</a><a class="tag" href="../c/category-fine-art.html">Fine art</a></dd><dt>Good as</dt><dd>illustration, poster</dd><dt>How it is made</dt><dd>diffusion</dd><dt>Palette</dt><dd><div class="sw"><span title="#a8763f" style="background:#a8763f"></span><span title="#c9d2d6" style="background:#c9d2d6"></span><span title="#4a5358" style="background:#4a5358"></span><span title="#6b5540" style="background:#6b5540"></span><span title="#9aa0a2" style="background:#9aa0a2"></span><span title="#d9c79b" style="background:#d9c79b"></span></div></dd></dl></aside></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painting - Style Vault</title><meta name="description" content="">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
+.tag.creative{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / Category / Painting</p><h1>Painting <span class="count">4</span></h1><p class="lede"></p><div id="lib"><div class="bar"><div class="tabs"><button data-view="grid" aria-pressed="true">Gallery</button><button data-view="list" aria-pressed="false">List</button></div><div class="chips"><button class="chip" data-reg="board" aria-pressed="false">Board</button><button class="chip" data-reg="bold" aria-pressed="false">Bold</button><button class="chip" data-reg="creative" aria-pressed="false">Creative</button></div><input id="q" class="search" type="search" placeholder="Search in Painting" aria-label="Search"></div><div class="grid"><a class="card" data-item data-regs="creative" data-text="sv-071 one wrong moon creative fine-art painting poster illustration a calm, straight night painting of an ordinary place - a harbour, a petrol station, a playground - where everything is right except one thing in the sky, such as a red moon or a second sun. it feels quiet at first, then unsettling once you spot it. what makes it this style is that exactly one thing is wrong, and it is the only red in the frame. anomaly detection explainers data quality storytelling workshop spot-the-difference openers personal essays on the odd signal" href="../s/sv-071-one-wrong-moon.html"><div class="pic"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="One Wrong Moon - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0" y="78%" width="100%" height="22%" fill="#6b2e7a" opacity="0.12"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">071</text><text x="24" y="150" font-size="24" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">One Wrong Moon</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><div class="meta"><p class="name">One Wrong Moon</p><p class="sub">SV-071 - poster, illustration</p><div style="margin-top:8px"><span class="tag creative">Creative</span></div></div></a><a class="card" data-item data-regs="creative" data-text="sv-072 procedure of marvels creative fine-art painting poster illustration hooded, long-limbed workers in a cramped workshop carrying out impossible tasks - knitting fog, filing birdsong, ironing a river - as if it were a dull office routine, in fine hatched old-style paint. it feels like a strange fairy tale told completely straight. what makes it this style is that the marvel is treated as a chore, and nobody looks amazed. what data teams actually do ai operations and mlops culture storytelling workshops personal brand essays on craft" href="../s/sv-072-procedure-of-marvels.html"><div class="pic"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Procedure Of Marvels - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0" y="78%" width="100%" height="22%" fill="#6b2e7a" opacity="0.12"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">072</text><text x="24" y="150" font-size="24" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">Procedure Of Marvels</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><div class="meta"><p class="name">Procedure Of Marvels</p><p class="sub">SV-072 - poster, illustration</p><div style="margin-top:8px"><span class="tag creative">Creative</span></div></div></a><a class="card" data-item data-regs="creative" data-text="sv-075 mirror shrine creative fine-art painting poster illustration a perfectly mirrored composition, like an altar under an arch, built around something that will not last - a candle flame, a soap bubble, a falling leaf - with soft glowing edges in oil and pencil. it feels sacred, still and fleeting. what makes it this style is strict left-right symmetry framing something about to disappear. moments worth marking reflective essays on time team farewells and transitions mindfulness or focus workshops" href="../s/sv-075-mirror-shrine.html"><div class="pic"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mirror Shrine - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0" y="78%" width="100%" height="22%" fill="#6b2e7a" opacity="0.12"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">075</text><text x="24" y="150" font-size="24" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">Mirror Shrine</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><div class="meta"><p class="name">Mirror Shrine</p><p class="sub">SV-075 - poster, illustration</p><div style="margin-top:8px"><span class="tag creative">Creative</span></div></div></a><a class="card" data-item data-regs="creative" data-text="sv-076 face is a landscape creative fine-art painting surreal poster illustration a formal portrait of a working person - a baker, a pilot, an astronomer - where the face is replaced by a window onto the landscape of their work, in sweet candy colours inside a round-topped panel. it feels dreamy, warm and a little surreal. what makes it this style is that the face becomes a window onto the person&#x27;s world. role and career profiles team introduction pages personal brand about-me pieces workshop themes on identity at work" href="../s/sv-076-face-is-a-landscape.html"><div class="pic"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Face Is A Landscape - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0" y="78%" width="100%" height="22%" fill="#6b2e7a" opacity="0.12"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">076</text><text x="24" y="150" font-size="24" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">Face Is A Landscape</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><div class="meta"><p class="name">Face Is A Landscape</p><p class="sub">SV-076 - poster, illustration</p><div style="margin-top:8px"><span class="tag creative">Creative</span></div></div></a></div><div class="list"><div class="list-wrap"><table><thead><tr><th>Style</th><th>Audience</th><th>Category</th><th>Formats</th><th>Own work</th></tr></thead><tbody><tr data-item data-regs="creative" data-text="sv-071 one wrong moon creative fine-art painting poster illustration a calm, straight night painting of an ordinary place - a harbour, a petrol station, a playground - where everything is right except one thing in the sky, such as a red moon or a second sun. it feels quiet at first, then unsettling once you spot it. what makes it this style is that exactly one thing is wrong, and it is the only red in the frame. anomaly detection explainers data quality storytelling workshop spot-the-difference openers personal essays on the odd signal"><td><a href="../s/sv-071-one-wrong-moon.html">One Wrong Moon</a><br><span class="count">SV-071</span></td><td>Creative</td><td>Fine art, Painting</td><td>poster, illustration</td><td>pending</td></tr><tr data-item data-regs="creative" data-text="sv-072 procedure of marvels creative fine-art painting poster illustration hooded, long-limbed workers in a cramped workshop carrying out impossible tasks - knitting fog, filing birdsong, ironing a river - as if it were a dull office routine, in fine hatched old-style paint. it feels like a strange fairy tale told completely straight. what makes it this style is that the marvel is treated as a chore, and nobody looks amazed. what data teams actually do ai operations and mlops culture storytelling workshops personal brand essays on craft"><td><a href="../s/sv-072-procedure-of-marvels.html">Procedure Of Marvels</a><br><span class="count">SV-072</span></td><td>Creative</td><td>Fine art, Painting</td><td>poster, illustration</td><td>pending</td></tr><tr data-item data-regs="creative" data-text="sv-075 mirror shrine creative fine-art painting poster illustration a perfectly mirrored composition, like an altar under an arch, built around something that will not last - a candle flame, a soap bubble, a falling leaf - with soft glowing edges in oil and pencil. it feels sacred, still and fleeting. what makes it this style is strict left-right symmetry framing something about to disappear. moments worth marking reflective essays on time team farewells and transitions mindfulness or focus workshops"><td><a href="../s/sv-075-mirror-shrine.html">Mirror Shrine</a><br><span class="count">SV-075</span></td><td>Creative</td><td>Fine art, Painting</td><td>poster, illustration</td><td>pending</td></tr><tr data-item data-regs="creative" data-text="sv-076 face is a landscape creative fine-art painting surreal poster illustration a formal portrait of a working person - a baker, a pilot, an astronomer - where the face is replaced by a window onto the landscape of their work, in sweet candy colours inside a round-topped panel. it feels dreamy, warm and a little surreal. what makes it this style is that the face becomes a window onto the person&#x27;s world. role and career profiles team introduction pages personal brand about-me pieces workshop themes on identity at work"><td><a href="../s/sv-076-face-is-a-landscape.html">Face Is A Landscape</a><br><span class="count">SV-076</span></td><td>Creative</td><td>Fine art, Painting, Surreal</td><td>poster, illustration</td><td>pending</td></tr></tbody></table></div></div><p id="empty" class="empty">No style matches.</p></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dark Spec Poster - Style Vault</title><meta name="description" content="A precision object lit like an expensive product photo against a true black void, with dense small monospace spec blocks running down the margins. One cold blue">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
+.tag.creative{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-bold.html">Bold</a> / Dark Spec Poster</p><h1>Dark Spec Poster</h1><p class="lede">SV-038</p><div class="cols"><div><div class="hero"><img src="../assets/works/2026-08-21-the-blind-spot.jpg" alt="The Blind Spot"></div><p class="cap">My own work in this style: <a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">The Blind Spot</a></p><h2>In plain words</h2><p class="plain">A precision object lit like an expensive product photo against a true black void, with dense small monospace spec blocks running down the margins. One cold blue accent and one earned warm accent are the only colours. The style is the single dramatic object in darkness surrounded by technical fine print.</p><h2>Topics it fits</h2><ul class="topics"><li><strong>AI product launch</strong><span>the flagship-product lighting on black makes a new tool feel engineered and premium</span></li><li><strong>Security and failure points</strong><span>one focal object in a void, with the warm accent on the flaw, sends the eye straight to the weak spot</span></li><li><strong>Keynote hero slides</strong><span>a single lit object and margin specs give a big-screen moment that still carries real numbers</span></li><li><strong>Hardware and infrastructure hooks</strong><span>machined metal under cinematic light turns servers or chips into something people stop scrolling for</span></li></ul><h2>Art style and layout</h2><ul class="dna"><li><b>core locked</b> [near_black_ground, cinematic_product_render, one_signal_accent, dense_mono_spec_modules, absence_as_focal_point]</li><li><b>near black ground</b> SIGNATURE: a true near-black void (#07090C), no lifted greys, no ambient fill, no visible floor or horizon. The darkness is the material. A dark-grey ground reads cheap; commit to black</li><li><b>cinematic product render</b> SIGNATURE: the subject is a precision object shot like a flagship product hero - anodised aluminium, brushed titanium, machined concentric marks, chamfers, micro-screws. Direct the LENS and the LIGHTS in the prompt (100mm macro at f/8, one high softbox plus two rim strips, volumetric haze) or you get generic CGI</li><li><b>one signal accent</b> one cold accent carries the whole design (cyan #4FC3E8 = sealed / nominal), with a single hot exception that must EARN itself (amber #E8912F = breached). Two accents maximum. The hot one appears exactly where the argument is</li><li><b>dense mono spec modules</b> SIGNATURE: rule-topped modules of monospace smallcaps heads over tight sans body, ranged down the margins. Technical, information-dense, never centred. Metro-poster grammar</li><li><b>absence as focal point</b> the strongest use of this style: render the MISSING thing as a void and let the eye land on it. Labelling what is present as fine is weaker than drawing what is absent</li><li><b>palette</b> [void &quot;#07090C, white &quot;#F2F4F7, muted &quot;#8A929C, cyan &quot;#4FC3E8, cyan-hi &quot;#5AD1F5, amber &quot;#E8912F]</li><li><b>typography</b> display = tight grotesque (Helvetica Neue / system sans) at 700 weight, tracking -1.2 to -2.2px; spec heads = monospace smallcaps, letter-spaced 1.9px; body = 9.5-10.5px sans. Tabular figures for data</li><li><b>composition</b> subject in a narrow central vertical band occupying ~half the frame width. Type lives in the reserved margins: masthead top-left, station labels ranged right in the left column, spec modules in the right column, statement across the foot</li><li><b>negative space</b> generous and deliberate. In a dark poster empty black reads as cinematic, not unfinished. Do not fill it</li><li><b>mood</b> expensive, engineered, faintly accusatory</li><li><b>era reference</b> contemporary product-launch spec posters (transit-system technical posters, flagship consumer-hardware exploded views)</li><li><b>character</b> tunable - any concept expressible as a precision assembly</li></ul><h3>What must stay, what may change</h3><p>Swap the object and the argument freely. Keep the true-black ground, the cinematic lens-and-light direction, one cold accent plus one earned hot accent, mono spec modules in the margins, and a single dominant focal point. If the ground lifts to grey or a second decorative hue appears, this style is gone.</p><h2>As JSON</h2><p class="lede">Paste this into a prompt or a skill to reuse the style.</p><button class="copy">Copy</button><pre><code id="json">{
+  &quot;id&quot;: &quot;SV-038&quot;,
+  &quot;name&quot;: &quot;Dark Spec Poster&quot;,
+  &quot;audience&quot;: [
+    &quot;bold&quot;
+  ],
+  &quot;category&quot;: [
+    &quot;graphic-design&quot;,
+    &quot;photography&quot;,
+    &quot;infographic&quot;
+  ],
+  &quot;format&quot;: [
+    &quot;poster&quot;,
+    &quot;infographic&quot;,
+    &quot;deck&quot;
+  ],
+  &quot;maker&quot;: &quot;hybrid&quot;,
+  &quot;keep_and_swap&quot;: &quot;Swap the object and the argument freely. Keep the true-black ground, the cinematic lens-and-light direction, one cold accent plus one earned hot accent, mono spec modules in the margins, and a single dominant focal point. If the ground lifts to grey or a second decorative hue appears, this style is gone.&quot;,
+  &quot;style_dna&quot;: {
+    &quot;core_locked&quot;: &quot;[near_black_ground, cinematic_product_render, one_signal_accent, dense_mono_spec_modules, absence_as_focal_point]&quot;,
+    &quot;near_black_ground&quot;: &quot;SIGNATURE: a true near-black void (#07090C), no lifted greys, no ambient fill, no visible floor or horizon. The darkness is the material. A dark-grey ground reads cheap; commit to black&quot;,
+    &quot;cinematic_product_render&quot;: &quot;SIGNATURE: the subject is a precision object shot like a flagship product hero - anodised aluminium, brushed titanium, machined concentric marks, chamfers, micro-screws. Direct the LENS and the LIGHTS in the prompt (100mm macro at f/8, one high softbox plus two rim strips, volumetric haze) or you get generic CGI&quot;,
+    &quot;one_signal_accent&quot;: &quot;one cold accent carries the whole design (cyan #4FC3E8 = sealed / nominal), with a single hot exception that must EARN itself (amber #E8912F = breached). Two accents maximum. The hot one appears exactly where the argument is&quot;,
+    &quot;dense_mono_spec_modules&quot;: &quot;SIGNATURE: rule-topped modules of monospace smallcaps heads over tight sans body, ranged down the margins. Technical, information-dense, never centred. Metro-poster grammar&quot;,
+    &quot;absence_as_focal_point&quot;: &quot;the strongest use of this style: render the MISSING thing as a void and let the eye land on it. Labelling what is present as fine is weaker than drawing what is absent&quot;,
+    &quot;palette&quot;: &quot;[void \&quot;#07090C, white \&quot;#F2F4F7, muted \&quot;#8A929C, cyan \&quot;#4FC3E8, cyan-hi \&quot;#5AD1F5, amber \&quot;#E8912F]&quot;,
+    &quot;typography&quot;: &quot;display = tight grotesque (Helvetica Neue / system sans) at 700 weight, tracking -1.2 to -2.2px; spec heads = monospace smallcaps, letter-spaced 1.9px; body = 9.5-10.5px sans. Tabular figures for data&quot;,
+    &quot;composition&quot;: &quot;subject in a narrow central vertical band occupying ~half the frame width. Type lives in the reserved margins: masthead top-left, station labels ranged right in the left column, spec modules in the right column, statement across the foot&quot;,
+    &quot;negative_space&quot;: &quot;generous and deliberate. In a dark poster empty black reads as cinematic, not unfinished. Do not fill it&quot;,
+    &quot;mood&quot;: &quot;expensive, engineered, faintly accusatory&quot;,
+    &quot;era_reference&quot;: &quot;contemporary product-launch spec posters (transit-system technical posters, flagship consumer-hardware exploded views)&quot;,
+    &quot;character&quot;: &quot;tunable - any concept expressible as a precision assembly&quot;
+  },
+  &quot;palette_hex&quot;: [
+    &quot;#07090c&quot;,
+    &quot;#f2f4f7&quot;,
+    &quot;#8a929c&quot;,
+    &quot;#4fc3e8&quot;,
+    &quot;#5ad1f5&quot;,
+    &quot;#e8912f&quot;
+  ],
+  &quot;topics&quot;: [
+    {
+      &quot;topic&quot;: &quot;AI product launch&quot;,
+      &quot;why&quot;: &quot;the flagship-product lighting on black makes a new tool feel engineered and premium&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Security and failure points&quot;,
+      &quot;why&quot;: &quot;one focal object in a void, with the warm accent on the flaw, sends the eye straight to the weak spot&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Keynote hero slides&quot;,
+      &quot;why&quot;: &quot;a single lit object and margin specs give a big-screen moment that still carries real numbers&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Hardware and infrastructure hooks&quot;,
+      &quot;why&quot;: &quot;machined metal under cinematic light turns servers or chips into something people stop scrolling for&quot;
+    }
+  ]
+}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag bold">Bold</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-graphic-design.html">Graphic design</a><a class="tag" href="../c/category-photography.html">Photography</a><a class="tag" href="../c/category-infographic.html">Infographic</a></dd><dt>Good as</dt><dd>poster, infographic, deck</dd><dt>How it is made</dt><dd>hybrid</dd><dt>First tried</dt><dd>2026-08-28</dd><dt>Palette</dt><dd><div class="sw"><span title="#07090c" style="background:#07090c"></span><span title="#f2f4f7" style="background:#f2f4f7"></span><span title="#8a929c" style="background:#8a929c"></span><span title="#4fc3e8" style="background:#4fc3e8"></span><span title="#5ad1f5" style="background:#5ad1f5"></span><span title="#e8912f" style="background:#e8912f"></span></div></dd></dl></aside></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>

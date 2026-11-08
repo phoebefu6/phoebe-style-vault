@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transit Map (Vignelli) - Style Vault</title><meta name="description" content="A subway-style map with straight coloured lines running at right angles and 45-degree turns, each line one colour, with neat stations and capsule-shaped interch">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
+.tag.creative{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-board.html">Board</a> / Transit Map (Vignelli)</p><h1>Transit Map (Vignelli)</h1><p class="lede">SV-035</p><div class="cols"><div><div class="hero"><img src="../assets/works/2026-07-18-ai-landscape-transit-map.jpg" alt="The AI landscape"></div><p class="cap">My own work in this style: <a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">The AI landscape</a></p><h2>In plain words</h2><p class="plain">A subway-style map with straight coloured lines running at right angles and 45-degree turns, each line one colour, with neat stations and capsule-shaped interchanges where lines meet. It feels authoritative and easy to follow. The style earns its keep at the interchanges, where two lines genuinely share a stop.</p><h2>Topics it fits</h2><ul class="topics"><li><strong>Data and AI roadmap</strong><span>parallel coloured lines show several workstreams moving forward together with clear stops along the way</span></li><li><strong>Career paths in data</strong><span>each line as a role and each interchange as a shared skill shows where paths cross</span></li><li><strong>Data stack landscape</strong><span>one colour per layer and capsule interchanges show exactly where tools hand off to each other</span></li><li><strong>Programme dependencies</strong><span>the interchange capsules make the points where two teams depend on each other visible to leadership</span></li></ul><h2>Art style and layout</h2><ul class="dna"><li><b>core locked</b> [geometry, one_colour_per_line, uniform_markers, interchange_capsule, grid_discipline]</li><li><b>medium</b> flat vector SVG on cream, rendered via Chrome headless</li><li><b>geometry</b> lines run on 45/90 degrees only; clean orthogonal grid</li><li><b>colour rule</b> one bold saturated colour per line, no gradients; cream ground #F5F2EA, ink #16171B</li><li><b>markers</b> uniform station dots (circle, cream fill + line-colour ring); interchange = stadium capsule, ink outline, spanning the lines it joins</li><li><b>typography</b> Helvetica/Arial; uppercase bold for line + interchange names, sentence case stations</li><li><b>hierarchy</b> big bold title block, thin rule, map body, legend strip + interchange key, small footer</li><li><b>negative space</b> generous; lines well separated</li><li><b>composition</b> parallel horizontal field-lines; interchanges are vertical capsules at shared columns; one line as full-width &quot;foundation</li><li><b>mood</b> authoritative, classic, information-design confident</li><li><b>palette</b> [cream &quot;#F5F2EA, ink &quot;#16171B, #D8322A, #E8820E, #2F6FB0, #2E9E5B, #7C4DA0]</li><li><b>era reference</b> Massimo Vignelli 1972 NYC subway diagram; International Typographic Style</li></ul><h3>What must stay, what may change</h3><p>Swap the domain (any field-map: data stack, career paths, a product&#x27;s surface). Keep 45/90 geometry, one-colour-per-line, uniform markers, capsule interchanges. The PAYLOAD is the interchanges - pick nodes where two lines genuinely share an idea.</p><h2>As JSON</h2><p class="lede">Paste this into a prompt or a skill to reuse the style.</p><button class="copy">Copy</button><pre><code id="json">{
+  &quot;id&quot;: &quot;SV-035&quot;,
+  &quot;name&quot;: &quot;Transit Map (Vignelli)&quot;,
+  &quot;audience&quot;: [
+    &quot;board&quot;
+  ],
+  &quot;category&quot;: [
+    &quot;data-viz&quot;,
+    &quot;infographic&quot;,
+    &quot;graphic-design&quot;
+  ],
+  &quot;format&quot;: [
+    &quot;map&quot;,
+    &quot;diagram&quot;
+  ],
+  &quot;maker&quot;: &quot;design-build&quot;,
+  &quot;keep_and_swap&quot;: &quot;Swap the domain (any field-map: data stack, career paths, a product&#x27;s surface). Keep 45/90 geometry, one-colour-per-line, uniform markers, capsule interchanges. The PAYLOAD is the interchanges - pick nodes where two lines genuinely share an idea.&quot;,
+  &quot;style_dna&quot;: {
+    &quot;core_locked&quot;: &quot;[geometry, one_colour_per_line, uniform_markers, interchange_capsule, grid_discipline]&quot;,
+    &quot;medium&quot;: &quot;flat vector SVG on cream, rendered via Chrome headless&quot;,
+    &quot;geometry&quot;: &quot;lines run on 45/90 degrees only; clean orthogonal grid&quot;,
+    &quot;colour_rule&quot;: &quot;one bold saturated colour per line, no gradients; cream ground #F5F2EA, ink #16171B&quot;,
+    &quot;markers&quot;: &quot;uniform station dots (circle, cream fill + line-colour ring); interchange = stadium capsule, ink outline, spanning the lines it joins&quot;,
+    &quot;typography&quot;: &quot;Helvetica/Arial; uppercase bold for line + interchange names, sentence case stations&quot;,
+    &quot;hierarchy&quot;: &quot;big bold title block, thin rule, map body, legend strip + interchange key, small footer&quot;,
+    &quot;negative_space&quot;: &quot;generous; lines well separated&quot;,
+    &quot;composition&quot;: &quot;parallel horizontal field-lines; interchanges are vertical capsules at shared columns; one line as full-width \&quot;foundation&quot;,
+    &quot;mood&quot;: &quot;authoritative, classic, information-design confident&quot;,
+    &quot;palette&quot;: &quot;[cream \&quot;#F5F2EA, ink \&quot;#16171B, #D8322A, #E8820E, #2F6FB0, #2E9E5B, #7C4DA0]&quot;,
+    &quot;era_reference&quot;: &quot;Massimo Vignelli 1972 NYC subway diagram; International Typographic Style&quot;
+  },
+  &quot;palette_hex&quot;: [
+    &quot;#f5f2ea&quot;,
+    &quot;#16171b&quot;,
+    &quot;#d8322a&quot;,
+    &quot;#e8820e&quot;,
+    &quot;#2f6fb0&quot;,
+    &quot;#2e9e5b&quot;
+  ],
+  &quot;topics&quot;: [
+    {
+      &quot;topic&quot;: &quot;Data and AI roadmap&quot;,
+      &quot;why&quot;: &quot;parallel coloured lines show several workstreams moving forward together with clear stops along the way&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Career paths in data&quot;,
+      &quot;why&quot;: &quot;each line as a role and each interchange as a shared skill shows where paths cross&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Data stack landscape&quot;,
+      &quot;why&quot;: &quot;one colour per layer and capsule interchanges show exactly where tools hand off to each other&quot;
+    },
+    {
+      &quot;topic&quot;: &quot;Programme dependencies&quot;,
+      &quot;why&quot;: &quot;the interchange capsules make the points where two teams depend on each other visible to leadership&quot;
+    }
+  ]
+}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag board">Board</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-data-viz.html">Data viz</a><a class="tag" href="../c/category-infographic.html">Infographic</a><a class="tag" href="../c/category-graphic-design.html">Graphic design</a></dd><dt>Good as</dt><dd>map, diagram</dd><dt>How it is made</dt><dd>design-build</dd><dt>Palette</dt><dd><div class="sw"><span title="#f5f2ea" style="background:#f5f2ea"></span><span title="#16171b" style="background:#16171b"></span><span title="#d8322a" style="background:#d8322a"></span><span title="#e8820e" style="background:#e8820e"></span><span title="#2f6fb0" style="background:#2f6fb0"></span><span title="#2e9e5b" style="background:#2e9e5b"></span></div></dd></dl></aside></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>

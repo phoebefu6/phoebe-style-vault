@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storybook - Style Vault</title><meta name="description" content="Narrative picture-book illustration - characters, scenes, warmth.">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
+.tag.creative{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / Category / Storybook</p><h1>Storybook <span class="count">4</span></h1><p class="lede">Narrative picture-book illustration - characters, scenes, warmth.</p><div id="lib"><div class="bar"><div class="tabs"><button data-view="grid" aria-pressed="true">Gallery</button><button data-view="list" aria-pressed="false">List</button></div><div class="chips"><button class="chip" data-reg="board" aria-pressed="false">Board</button><button class="chip" data-reg="bold" aria-pressed="false">Bold</button><button class="chip" data-reg="creative" aria-pressed="false">Creative</button></div><input id="q" class="search" type="search" placeholder="Search in Storybook" aria-label="Search"></div><div class="grid"><a class="card" data-item data-regs="creative" data-text="sv-017 circus revival creative illustration storybook poster illustration a single circus performer, animal or tent drawn like an old printed poster, in faded red, mustard and cream with slightly off-register ink and worn paper edges. it feels joyful with a thin seam of melancholy, like a show after closing. what makes it this style is the vintage letterpress printing look. workshop or event poster juggling priorities team roles as a troupe after the launch reflections" href="../s/sv-017-circus-revival.html"><div class="pic"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Circus Revival - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0" y="78%" width="100%" height="22%" fill="#6b2e7a" opacity="0.12"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">017</text><text x="24" y="150" font-size="24" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">Circus Revival</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><div class="meta"><p class="name">Circus Revival</p><p class="sub">SV-017 - poster, illustration</p><div style="margin-top:8px"><span class="tag creative">Creative</span></div></div></a><a class="card" data-item data-regs="creative" data-text="sv-053 drawn memoir data creative data-viz illustration storybook infographic illustration an illustrated memoir where drawn narrator characters walk the reader through history era by era, each chapter anchored by the same pastel chart repeated so you learn to read it once. custom hand lettering titles each era. the style is the drawn person presenting the chart, like a guide telling their own story. history of ai team or company origin story course introductions personal career journey" href="../s/sv-053-drawn-memoir-data.html"><div class="pic"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Drawn Memoir Data - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0" y="78%" width="100%" height="22%" fill="#6b2e7a" opacity="0.12"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">053</text><text x="24" y="150" font-size="24" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">Drawn Memoir Data</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><div class="meta"><p class="name">Drawn Memoir Data</p><p class="sub">SV-053 - infographic, illustration</p><div style="margin-top:8px"><span class="tag creative">Creative</span></div></div></a><a class="card" data-item data-regs="creative" data-text="sv-060 canvas weave folk creative illustration storybook fine-art illustration card a small cute animal with a round head and shiny black eyes, painted flat like a folk picture on canvas, warm orange and cream against a very dark green, with one little seasonal object beside it. there is no light or shadow, just warm shapes on a dark ground, so it feels cosy and handmade. what makes it this style is the flat folk-painting look with a touch of red appearing only two or three times. seasonal team greetings course mascots onboarding welcome pages personal brand stickers and icons" href="../s/sv-060-canvas-weave-folk.html"><div class="pic"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Canvas Weave Folk - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0" y="78%" width="100%" height="22%" fill="#6b2e7a" opacity="0.12"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">060</text><text x="24" y="150" font-size="24" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">Canvas Weave Folk</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><div class="meta"><p class="name">Canvas Weave Folk</p><p class="sub">SV-060 - illustration, card</p><div style="margin-top:8px"><span class="tag creative">Creative</span></div></div></a><a class="card" data-item data-regs="creative" data-text="sv-062 buttercup pondlight creative illustration storybook illustration a small, soft, big-eyed creature sitting at the edge of a pond, ringed by lily pads and blossoms, in buttercup yellow against blue-green water. it feels gentle, sunny and storybook-sweet. what makes it this style is one bright yellow-and-blue pairing with soft overcast light and no hard shadows anywhere. beginner course covers wellbeing and burnout talks children and family explainers on ai personal brand seasonal posts" href="../s/sv-062-buttercup-pondlight.html"><div class="pic"><svg class="plate" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Buttercup Pondlight - first render pending"><rect width="400" height="300" fill="#f4edf7"/><rect x="0" y="78%" width="100%" height="22%" fill="#6b2e7a" opacity="0.12"/><text x="24" y="70" font-size="56" font-weight="700" fill="#6b2e7a" opacity="0.18" font-family="Georgia, serif">062</text><text x="24" y="150" font-size="24" font-weight="600" fill="#6b2e7a" font-family="Georgia, serif">Buttercup Pondlight</text><text x="24" y="182" font-size="13" fill="#6b2e7a" opacity="0.75" font-family="-apple-system, Segoe UI, sans-serif">first render pending</text></svg></div><div class="meta"><p class="name">Buttercup Pondlight</p><p class="sub">SV-062 - illustration</p><div style="margin-top:8px"><span class="tag creative">Creative</span></div></div></a></div><div class="list"><div class="list-wrap"><table><thead><tr><th>Style</th><th>Audience</th><th>Category</th><th>Formats</th><th>Own work</th></tr></thead><tbody><tr data-item data-regs="creative" data-text="sv-017 circus revival creative illustration storybook poster illustration a single circus performer, animal or tent drawn like an old printed poster, in faded red, mustard and cream with slightly off-register ink and worn paper edges. it feels joyful with a thin seam of melancholy, like a show after closing. what makes it this style is the vintage letterpress printing look. workshop or event poster juggling priorities team roles as a troupe after the launch reflections"><td><a href="../s/sv-017-circus-revival.html">Circus Revival</a><br><span class="count">SV-017</span></td><td>Creative</td><td>Illustration, Storybook</td><td>poster, illustration</td><td>pending</td></tr><tr data-item data-regs="creative" data-text="sv-053 drawn memoir data creative data-viz illustration storybook infographic illustration an illustrated memoir where drawn narrator characters walk the reader through history era by era, each chapter anchored by the same pastel chart repeated so you learn to read it once. custom hand lettering titles each era. the style is the drawn person presenting the chart, like a guide telling their own story. history of ai team or company origin story course introductions personal career journey"><td><a href="../s/sv-053-drawn-memoir-data.html">Drawn Memoir Data</a><br><span class="count">SV-053</span></td><td>Creative</td><td>Data viz, Illustration, Storybook</td><td>infographic, illustration</td><td>pending</td></tr><tr data-item data-regs="creative" data-text="sv-060 canvas weave folk creative illustration storybook fine-art illustration card a small cute animal with a round head and shiny black eyes, painted flat like a folk picture on canvas, warm orange and cream against a very dark green, with one little seasonal object beside it. there is no light or shadow, just warm shapes on a dark ground, so it feels cosy and handmade. what makes it this style is the flat folk-painting look with a touch of red appearing only two or three times. seasonal team greetings course mascots onboarding welcome pages personal brand stickers and icons"><td><a href="../s/sv-060-canvas-weave-folk.html">Canvas Weave Folk</a><br><span class="count">SV-060</span></td><td>Creative</td><td>Illustration, Storybook, Fine art</td><td>illustration, card</td><td>pending</td></tr><tr data-item data-regs="creative" data-text="sv-062 buttercup pondlight creative illustration storybook illustration a small, soft, big-eyed creature sitting at the edge of a pond, ringed by lily pads and blossoms, in buttercup yellow against blue-green water. it feels gentle, sunny and storybook-sweet. what makes it this style is one bright yellow-and-blue pairing with soft overcast light and no hard shadows anywhere. beginner course covers wellbeing and burnout talks children and family explainers on ai personal brand seasonal posts"><td><a href="../s/sv-062-buttercup-pondlight.html">Buttercup Pondlight</a><br><span class="count">SV-062</span></td><td>Creative</td><td>Illustration, Storybook</td><td>illustration</td><td>pending</td></tr></tbody></table></div></div><p id="empty" class="empty">No style matches.</p></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>
