@@ -31,14 +31,15 @@ import styles  # noqa: E402  the one reader
 GALLERY = Path.home() / "Documents/Codex/sketch-ideas-with-phoebe/works"
 GALLERY_URL = "https://phoebefu6.github.io/sketch-ideas-with-phoebe/"
 
-REG = {
-    "board": ("Board", "Calm, exact, credible. For C-level, board packs and client proposals.",
-              "#eef2f7", "#2c3e5c"),
-    "bold": ("Bold", "One loud idea that reads at a distance. For keynotes, posters and LinkedIn hooks.",
-             "#fdeee7", "#9a3412"),
-    "creative": ("Creative", "Art-led and surprising. For storytelling, workshops, courses and the gallery.",
-                 "#f4edf7", "#6b2e7a"),
+# Audience labels and blurbs come ONLY from taxonomy.yml (via styles.registers()); this file
+# owns nothing but the tag colours. An audience with no colour here falls back to neutral grey.
+TAG_COLOURS = {
+    "boardroom": ("#eef2f7", "#2c3e5c"), "stage": ("#fdeee7", "#9a3412"),
+    "feed": ("#e8f5ef", "#1f6b4a"), "classroom": ("#fdf6e3", "#8a5a00"),
+    "team": ("#fde9ef", "#9b2c55"), "gallery": ("#f4edf7", "#6b2e7a"),
 }
+REG = {k: (v.get("label", k), v.get("blurb", ""), *TAG_COLOURS.get(k, ("#f1f1f1", "#333333")))
+       for k, v in styles.registers().items()}
 BANNED = re.compile(r"—|–|\blottery\b|\bbetting\b", re.I)
 
 # ------------------------------------------------------------------ helpers
@@ -126,7 +127,7 @@ def load() -> list[dict]:
         for t in bullets(section(body, "Topics it fits")):
             m = re.match(r"\*\*(.+?)\*\*\s*-\s*(.*)", t)
             topics.append((m.group(1), m.group(2)) if m else (t, ""))
-        reg = c["register"] or ["creative"]
+        reg = [r for r in c["register"] if r in REG] or ["gallery"]
         sid = c["id"]
         cards.append({
             "id": sid,
@@ -256,8 +257,7 @@ font-size:13px;cursor:pointer;color:var(--soft)}
 .chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
 .tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
 background:#f1edf3;color:var(--soft)}
-.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
-.tag.creative{background:#f4edf7;color:#6b2e7a}
+@@TAG_CSS@@
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
 text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
@@ -308,6 +308,8 @@ footer a{color:var(--plum)}
 @media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
 .dna b{display:block;min-width:0}}
 """
+CSS = CSS.replace("@@TAG_CSS@@", "".join(
+    f".tag.{k}{{background:{v[2]};color:{v[3]}}}" for k, v in REG.items()))
 
 JS = """
 document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
@@ -443,7 +445,7 @@ def home(cards: list[dict], gs: list[dict]) -> str:
             f'idea. Start from who you are talking to, or from the kind of picture you need. '
             f'Every style here has a finished example of my own; new styles appear once theirs is made.</p>'
             f'<div id="lib">{toolbar(False, "Search styles, topics, formats")}'
-            + block("audience", "By audience", "Who is in the room decides how loud the picture may be.")
+            + block("audience", "By audience", "Where the picture will be seen decides how it should look.")
             + block("category", "By category", "The kind of picture: chart, illustration, comic, poster and more.")
             + '<p id="empty" class="empty">Nothing matches that search.</p></div>')
     return page("Style Vault - Phoebe Fu", "A library of visual styles grouped by audience and category.",

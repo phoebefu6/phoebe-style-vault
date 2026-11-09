@@ -35,8 +35,7 @@ font-size:13px;cursor:pointer;color:var(--soft)}
 .chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
 .tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
 background:#f1edf3;color:var(--soft)}
-.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
-.tag.creative{background:#f4edf7;color:#6b2e7a}
+.tag.boardroom{background:#eef2f7;color:#2c3e5c}.tag.stage{background:#fdeee7;color:#9a3412}.tag.feed{background:#e8f5ef;color:#1f6b4a}.tag.classroom{background:#fdf6e3;color:#8a5a00}.tag.team{background:#fde9ef;color:#9b2c55}.tag.gallery{background:#f4edf7;color:#6b2e7a}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
 text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
@@ -93,17 +92,16 @@ footer a{color:var(--plum)}
 <a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
 </div></header>
 <main class="wrap">
-<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-creative.html">Creative</a> / Paper Ledger Sculpture</p><h1>Paper Ledger Sculpture</h1><p class="lede">SV-050</p><div class="cols"><div><div class="hero"><img src="../assets/works/sv-050-own.jpg" alt="The data science lifecycle, set in Paper Ledger Sculpture"></div><p class="cap">Example: The data science lifecycle, set in Paper Ledger Sculpture</p><h2>In plain words</h2><p class="plain">A data sculpture built from real paper, such as cheques, receipts or tickets, cut into discs where each disc stands for one unit and colours and patterns code four states. The paper chosen comes from the same world as the data. The style is that the material itself is the subject, and patterned fills mark what should or should not have happened.
+<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-classroom.html">Classroom</a> / Paper Ledger Sculpture</p><h1>Paper Ledger Sculpture</h1><p class="lede">SV-050</p><div class="cols"><div><div class="hero"><img src="../assets/works/sv-050-own.jpg" alt="The data science lifecycle, set in Paper Ledger Sculpture"></div><p class="cap">Example: The data science lifecycle, set in Paper Ledger Sculpture</p><h2>In plain words</h2><p class="plain">A data sculpture built from real paper, such as cheques, receipts or tickets, cut into discs where each disc stands for one unit and colours and patterns code four states. The paper chosen comes from the same world as the data. The style is that the material itself is the subject, and patterned fills mark what should or should not have happened.
 
 <strong>Best for:</strong> spending and cost stories; value lost to bad data; workshop on data as material; personal finance explainers. <strong>Avoid:</strong> text or lettering generated inside the image.</p><h2>Topics it fits</h2><ul class="topics"><li><strong>Spending and cost stories</strong><span>building the chart out of actual receipts ties every disc to the money it represents</span></li><li><strong>Value lost to bad data</strong><span>the patterned fill reserved for lost income makes the counterfactual cost visible next to the real figures</span></li><li><strong>Workshop on data as material</strong><span>a physical paper chart shows participants that units and categories are design choices</span></li><li><strong>Personal finance explainers</strong><span>everyday paper like bus tickets or bills makes a household dataset instantly relatable</span></li></ul><h2>Art style and layout</h2><ul class="dna"><li><b>core locked</b> [substrate_is_the_subject_matter, one_disc_one_unit, four_state_colour_code, patterned_fill_means_counterfactual]</li><li><b>colour code (steal whole)</b> baseline hue / growth hue / patterned overlay = gains that should not exist / patterned second hue = income lost - patterns mark the COUNTERFACTUAL states</li></ul><h3>What must stay, what may change</h3><p>material - swap the found-paper substrate to match the dataset (checks for income, receipts for spending, tickets for transit)</p><h2>As JSON</h2><p class="lede">Paste this into a prompt or a skill to reuse the style.</p><button class="copy">Copy</button><pre><code id="json">{
   &quot;id&quot;: &quot;SV-050&quot;,
   &quot;name&quot;: &quot;Paper Ledger Sculpture&quot;,
   &quot;audience&quot;: [
-    &quot;creative&quot;
+    &quot;classroom&quot;
   ],
   &quot;category&quot;: [
-    &quot;data-viz&quot;,
-    &quot;craft-material&quot;
+    &quot;data-viz&quot;
   ],
   &quot;format&quot;: [
     &quot;isotype&quot;,
@@ -133,7 +131,7 @@ footer a{color:var(--plum)}
       &quot;why&quot;: &quot;everyday paper like bus tickets or bills makes a household dataset instantly relatable&quot;
     }
   ]
-}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag creative">Creative</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-data-viz.html">Data viz</a><a class="tag" href="../c/category-craft-material.html">Craft / Material</a></dd><dt>Good as</dt><dd>isotype, infographic</dd><dt>How it is made</dt><dd>hybrid</dd><dt>First tried</dt><dd>2026-09-09</dd></dl></aside></div>
+}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag classroom">Classroom</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-data-viz.html">Data viz</a></dd><dt>Good as</dt><dd>isotype, infographic</dd><dt>How it is made</dt><dd>hybrid</dd><dt>First tried</dt><dd>2026-09-09</dd></dl></aside></div>
 </main>
 <footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
 and the topics it explains best. Finished pieces live in the

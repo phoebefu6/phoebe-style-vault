@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3D and material - Style Vault</title><meta name="description" content="Rendered 3D, sculpture, objects and physical craft - clay, textile, glass, paper.">
+<style>
+:root{--bg:#fbfaf8;--card:#ffffff;--ink:#1d1b20;--soft:#5f5866;--line:#e7e2ea;--plum:#6b2e7a;
+--plum-soft:#f4edf7;--r:14px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,
+"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+header.top{border-bottom:1px solid var(--line);background:#fff}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:700;text-decoration:none}
+.brand span{color:var(--plum)}
+.toplink{font-size:14px;color:var(--soft);text-decoration:none}
+.toplink:hover{color:var(--plum)}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4vw,44px);line-height:1.15;margin:36px 0 8px}
+h2{font-family:Georgia,"Times New Roman",serif;font-size:24px;margin:44px 0 6px}
+h3{font-size:17px;margin:28px 0 8px}
+.lede{color:var(--soft);max-width:720px;margin:0 0 8px}
+.crumb{font-size:14px;color:var(--soft);margin-top:24px}
+.crumb a{text-decoration:none}.crumb a:hover{color:var(--plum)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:22px 0 18px}
+.tabs{display:flex;gap:4px;background:#f1edf3;border-radius:10px;padding:4px}
+.tabs button{border:0;background:transparent;font:inherit;font-size:14px;padding:6px 12px;border-radius:7px;
+cursor:pointer;color:var(--soft)}
+.tabs button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.search{flex:1 1 220px;max-width:340px;margin-left:auto;border:1px solid var(--line);border-radius:10px;
+padding:8px 12px;font:inherit;font-size:14px;background:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:4px 12px;font:inherit;
+font-size:13px;cursor:pointer;color:var(--soft)}
+.chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
+.tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
+background:#f1edf3;color:var(--soft)}
+.tag.boardroom{background:#eef2f7;color:#2c3e5c}.tag.stage{background:#fdeee7;color:#9a3412}.tag.feed{background:#e8f5ef;color:#1f6b4a}.tag.classroom{background:#fdf6e3;color:#8a5a00}.tag.team{background:#fde9ef;color:#9b2c55}.tag.gallery{background:#f4edf7;color:#6b2e7a}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
+.card:hover{box-shadow:0 8px 24px rgba(60,30,70,.10);transform:translateY(-2px)}
+.card .pic{aspect-ratio:4/3;background:#f3f0f4;overflow:hidden}
+.card .pic img,.card .pic svg{width:100%;height:100%;object-fit:cover}
+.collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.collage>*{overflow:hidden;min-height:0}
+.collage img,.collage svg{width:100%;height:100%;object-fit:cover}
+.card .meta{padding:14px 16px 16px}
+.card .name{font-weight:600;font-size:16px;margin:0 0 4px}
+.card .sub{font-size:13px;color:var(--soft);margin:0}
+.list{display:none}.list table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+border-radius:var(--r);overflow:hidden;font-size:14px}
+.list th,.list td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+.list th{background:#f7f4f8;font-weight:600;color:var(--soft)}
+.list a{text-decoration:none;font-weight:600}.list a:hover{color:var(--plum)}
+.view-list .grid{display:none}.view-list .list{display:block}
+.list-wrap{overflow-x:auto}
+.empty{color:var(--soft);padding:24px 0;display:none}
+.hero{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin:20px 0 6px}
+.hero img{width:100%;height:auto;max-height:620px;object-fit:contain;background:#f6f3f7}.hero svg{width:100%;height:auto;aspect-ratio:4/3;max-height:560px}
+.cap{font-size:13px;color:var(--soft);margin:6px 0 0}
+.cap a{color:var(--plum)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+.side{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;position:sticky;top:20px}
+.side dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);margin-top:12px}
+.side dt:first-child{margin-top:0}.side dd{margin:2px 0 0}
+.sw{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.sw span{width:28px;height:28px;border-radius:6px;border:1px solid rgba(0,0,0,.08)}
+.plain{font-size:18px;line-height:1.65;max-width:720px}
+.topics{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.topics li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.topics strong{display:block}
+.topics span{color:var(--soft);font-size:15px}
+.dna{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.dna li{overflow-wrap:anywhere;padding:10px 14px;background:#fff;border:1px solid var(--line);border-radius:10px;font-size:15px}
+.dna b{display:inline-block;min-width:150px;color:var(--plum);font-weight:600}
+pre{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow:auto;
+font-size:13px;line-height:1.5;max-height:460px}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em}
+.copy{float:right;border:1px solid var(--line);background:#fff;border-radius:8px;padding:4px 10px;font:inherit;
+font-size:13px;cursor:pointer}
+footer{border-top:1px solid var(--line);margin-top:64px;padding:24px 0 40px;font-size:14px;color:var(--soft)}
+footer a{color:var(--plum)}
+.count{color:var(--soft);font-weight:400}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr)}.side{position:static}}
+@media (max-width:560px){.wrap{padding:0 16px}.grid{grid-template-columns:1fr}.search{max-width:none;margin-left:0}
+.dna b{display:block;min-width:0}}
+</style></head>
+<body>
+<header class="top"><div class="wrap">
+<a class="brand" href="../index.html">Phoebe's <span>Style Vault</span></a>
+<a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
+</div></header>
+<main class="wrap">
+<p class="crumb"><a href="../index.html">Style Vault</a> / Category / 3D and material</p><h1>3D and material <span class="count">7</span></h1><p class="lede">Rendered 3D, sculpture, objects and physical craft - clay, textile, glass, paper.</p><div id="lib"><div class="bar"><div class="tabs"><button data-view="grid" aria-pressed="true">Gallery</button><button data-view="list" aria-pressed="false">List</button></div><div class="chips"><button class="chip" data-reg="boardroom" aria-pressed="false">Boardroom</button><button class="chip" data-reg="stage" aria-pressed="false">Stage</button><button class="chip" data-reg="feed" aria-pressed="false">Feed</button><button class="chip" data-reg="classroom" aria-pressed="false">Classroom</button><button class="chip" data-reg="team" aria-pressed="false">Team</button><button class="chip" data-reg="gallery" aria-pressed="false">Gallery</button></div><input id="q" class="search" type="search" placeholder="Search in 3D and material" aria-label="Search"></div><div class="grid"><a class="card" data-item data-regs="team" data-text="sv-005 woven earth team three-d-material poster illustration an abstract woven or knotted textile, close up, with side light picking out every bump of the natural fibre in clay, indigo and ochre tones. it feels handmade, warm and touchable. what makes it this style is the visible irregularity of real hand-spun fibre, so the picture reads as made by people, not machines.
+
+**best for:** human in the loop ai; team culture and collaboration; workshop opening slide; personal craft and slow learning. **avoid:** text or lettering generated inside the image. human in the loop ai team culture and collaboration workshop opening slide personal craft and slow learning" href="../s/sv-005-woven-earth.html"><div class="pic"><img src="../assets/works/sv-005-own-thumb.jpg" alt="The data science lifecycle, set in Woven Earth" loading="lazy"></div><div class="meta"><p class="name">Woven Earth</p><p class="sub">SV-005 - poster, illustration - own work</p><div style="margin-top:8px"><span class="tag team">Team</span></div></div></a><a class="card" data-item data-regs="feed" data-text="sv-007 powderism feed three-d-material poster style-study something, like a figure or a piece of fruit, bursts apart into clouds of coloured powder, frozen mid-explosion and lit from behind so the dust glows against a dark ground. it feels kinetic, intense and editorial. what makes it this style is two pigments colliding in a single frozen moment.
+
+**best for:** disruption and change stories; two teams merging; creative workshop opener; personal reinvention post. **avoid:** text or lettering generated inside the image. disruption and change stories two teams merging creative workshop opener personal reinvention post" href="../s/sv-007-powderism.html"><div class="pic"><img src="../assets/works/sv-007-own-thumb.jpg" alt="The data science lifecycle, set in Powderism" loading="lazy"></div><div class="meta"><p class="name">Powderism</p><p class="sub">SV-007 - poster, style-study - own work</p><div style="margin-top:8px"><span class="tag feed">Feed</span></div></div></a><a class="card" data-item data-regs="classroom" data-text="sv-009 twisted realities classroom three-d-material illustration style-study an impossible building or object that almost makes sense, photographed like real architecture, with perspective pushed too far and two light sources that disagree. it feels like a calm dream, not a nightmare. what makes it this style is real-looking surfaces on a structure that cannot exist.
+
+**best for:** messy data pipelines; assumptions that do not add up; design thinking workshop; career paths that are not linear. **avoid:** text or lettering generated inside the image. messy data pipelines assumptions that do not add up design thinking workshop career paths that are not linear" href="../s/sv-009-twisted-realities.html"><div class="pic"><img src="../assets/works/sv-009-own-thumb.jpg" alt="The data science lifecycle, set in Twisted Realities" loading="lazy"></div><div class="meta"><p class="name">Twisted Realities</p><p class="sub">SV-009 - illustration, style-study - own work</p><div style="margin-top:8px"><span class="tag classroom">Classroom</span></div></div></a><a class="card" data-item data-regs="stage" data-text="sv-010 chrome vertical stage three-d-material poster illustration a tiny metallic car races down a black glowing road into a towering city of dark, heavily textured structures, with a pale blue sky far above. it feels monumental, cold, fast and a little heroic. what makes it this style is the steep perspective: one small bright traveller dwarfed by a giant vertical world.
+
+**best for:** ai transformation launch; scaling up keynote; speed to market hook; startup versus incumbents. **avoid:** text or lettering generated inside the image. ai transformation launch scaling up keynote speed to market hook startup versus incumbents" href="../s/sv-010-chrome-vertical.html"><div class="pic"><img src="../assets/works/sv-010-own-thumb.jpg" alt="The data science lifecycle, set in Chrome Vertical" loading="lazy"></div><div class="meta"><p class="name">Chrome Vertical</p><p class="sub">SV-010 - poster, illustration - own work</p><div style="margin-top:8px"><span class="tag stage">Stage</span></div></div></a><a class="card" data-item data-regs="classroom" data-text="sv-014 leaded light classroom three-d-material poster field-guide illustration a single moth, fern or flower is built as a stained glass panel, with thick black lead lines holding jewel-coloured glass, lit from behind like a lightbox. it feels reverent and still, slightly like a church window. what makes it this style is the light coming through the glass rather than falling on it.
+
+**best for:** field guide to data terms; course module covers; knowledge as many small pieces; personal values series. **avoid:** text or lettering generated inside the image. field guide to data terms course module covers knowledge as many small pieces personal values series" href="../s/sv-014-leaded-light.html"><div class="pic"><img src="../assets/works/sv-014-own-thumb.jpg" alt="The data science lifecycle, set in Leaded Light" loading="lazy"></div><div class="meta"><p class="name">Leaded Light</p><p class="sub">SV-014 - poster, field-guide, illustration - own work</p><div style="margin-top:8px"><span class="tag classroom">Classroom</span></div></div></a><a class="card" data-item data-regs="gallery" data-text="sv-031 painted on salvage gallery three-d-material illustration poster a small, tender scene painted straight onto an old piece of salvaged wood or tin, with the broken edge, flaking paint and a nail hole all left in the picture. it is photographed flat and evenly, so you see an object, not just a painting. the style comes from the contrast between something delicate and the discarded surface it lives on.
+
+**best for:** legacy system modernisation stories; career pivots and reinvention; data reuse and second life of data; craft and culture workshops. **avoid:** text or lettering generated inside the image. legacy system modernisation stories career pivots and reinvention data reuse and second life of data craft and culture workshops" href="../s/sv-031-painted-on-salvage.html"><div class="pic"><img src="../assets/works/sv-031-own-thumb.jpg" alt="The data science lifecycle, set in Painted On Salvage" loading="lazy"></div><div class="meta"><p class="name">Painted On Salvage</p><p class="sub">SV-031 - illustration, poster - own work</p><div style="margin-top:8px"><span class="tag gallery">Gallery</span></div></div></a><a class="card" data-item data-regs="gallery" data-text="sv-040 verdigris doll gallery three-d-material illustration poster card a hand-made doll with visible seams and paint, photographed with the soft, warm respect of a real portrait, seated against an empty ochre haze. teal, chartreuse and a touch of rust orange give it a quietly uncanny, melancholy feel. the style is treating a made object as if it were a real person sitting for a painter.
+
+**best for:** art prints, gallery pieces and portrait series across very different beings. **avoid:** glossy collectible renders, horror dolls, brass steampunk, busy backgrounds and cute faces. ai and humanity storytelling digital twins and personas culture and belonging posts workshop prompts on empathy" href="../s/sv-040-verdigris-doll.html"><div class="pic"><img src="../assets/works/sv-040-own-thumb.jpg" alt="The data science lifecycle, set in Verdigris Doll" loading="lazy"></div><div class="meta"><p class="name">Verdigris Doll</p><p class="sub">SV-040 - illustration, poster, card - own work</p><div style="margin-top:8px"><span class="tag gallery">Gallery</span></div></div></a></div><div class="list"><div class="list-wrap"><table><thead><tr><th>Style</th><th>Audience</th><th>Category</th><th>Formats</th><th>Own work</th></tr></thead><tbody><tr data-item data-regs="team" data-text="sv-005 woven earth team three-d-material poster illustration an abstract woven or knotted textile, close up, with side light picking out every bump of the natural fibre in clay, indigo and ochre tones. it feels handmade, warm and touchable. what makes it this style is the visible irregularity of real hand-spun fibre, so the picture reads as made by people, not machines.
+
+**best for:** human in the loop ai; team culture and collaboration; workshop opening slide; personal craft and slow learning. **avoid:** text or lettering generated inside the image. human in the loop ai team culture and collaboration workshop opening slide personal craft and slow learning"><td><a href="../s/sv-005-woven-earth.html">Woven Earth</a><br><span class="count">SV-005</span></td><td>Team</td><td>3D and material</td><td>poster, illustration</td><td>yes</td></tr><tr data-item data-regs="feed" data-text="sv-007 powderism feed three-d-material poster style-study something, like a figure or a piece of fruit, bursts apart into clouds of coloured powder, frozen mid-explosion and lit from behind so the dust glows against a dark ground. it feels kinetic, intense and editorial. what makes it this style is two pigments colliding in a single frozen moment.
+
+**best for:** disruption and change stories; two teams merging; creative workshop opener; personal reinvention post. **avoid:** text or lettering generated inside the image. disruption and change stories two teams merging creative workshop opener personal reinvention post"><td><a href="../s/sv-007-powderism.html">Powderism</a><br><span class="count">SV-007</span></td><td>Feed</td><td>3D and material</td><td>poster, style-study</td><td>yes</td></tr><tr data-item data-regs="classroom" data-text="sv-009 twisted realities classroom three-d-material illustration style-study an impossible building or object that almost makes sense, photographed like real architecture, with perspective pushed too far and two light sources that disagree. it feels like a calm dream, not a nightmare. what makes it this style is real-looking surfaces on a structure that cannot exist.
+
+**best for:** messy data pipelines; assumptions that do not add up; design thinking workshop; career paths that are not linear. **avoid:** text or lettering generated inside the image. messy data pipelines assumptions that do not add up design thinking workshop career paths that are not linear"><td><a href="../s/sv-009-twisted-realities.html">Twisted Realities</a><br><span class="count">SV-009</span></td><td>Classroom</td><td>3D and material</td><td>illustration, style-study</td><td>yes</td></tr><tr data-item data-regs="stage" data-text="sv-010 chrome vertical stage three-d-material poster illustration a tiny metallic car races down a black glowing road into a towering city of dark, heavily textured structures, with a pale blue sky far above. it feels monumental, cold, fast and a little heroic. what makes it this style is the steep perspective: one small bright traveller dwarfed by a giant vertical world.
+
+**best for:** ai transformation launch; scaling up keynote; speed to market hook; startup versus incumbents. **avoid:** text or lettering generated inside the image. ai transformation launch scaling up keynote speed to market hook startup versus incumbents"><td><a href="../s/sv-010-chrome-vertical.html">Chrome Vertical</a><br><span class="count">SV-010</span></td><td>Stage</td><td>3D and material</td><td>poster, illustration</td><td>yes</td></tr><tr data-item data-regs="classroom" data-text="sv-014 leaded light classroom three-d-material poster field-guide illustration a single moth, fern or flower is built as a stained glass panel, with thick black lead lines holding jewel-coloured glass, lit from behind like a lightbox. it feels reverent and still, slightly like a church window. what makes it this style is the light coming through the glass rather than falling on it.
+
+**best for:** field guide to data terms; course module covers; knowledge as many small pieces; personal values series. **avoid:** text or lettering generated inside the image. field guide to data terms course module covers knowledge as many small pieces personal values series"><td><a href="../s/sv-014-leaded-light.html">Leaded Light</a><br><span class="count">SV-014</span></td><td>Classroom</td><td>3D and material</td><td>poster, field-guide, illustration</td><td>yes</td></tr><tr data-item data-regs="gallery" data-text="sv-031 painted on salvage gallery three-d-material illustration poster a small, tender scene painted straight onto an old piece of salvaged wood or tin, with the broken edge, flaking paint and a nail hole all left in the picture. it is photographed flat and evenly, so you see an object, not just a painting. the style comes from the contrast between something delicate and the discarded surface it lives on.
+
+**best for:** legacy system modernisation stories; career pivots and reinvention; data reuse and second life of data; craft and culture workshops. **avoid:** text or lettering generated inside the image. legacy system modernisation stories career pivots and reinvention data reuse and second life of data craft and culture workshops"><td><a href="../s/sv-031-painted-on-salvage.html">Painted On Salvage</a><br><span class="count">SV-031</span></td><td>Gallery</td><td>3D and material</td><td>illustration, poster</td><td>yes</td></tr><tr data-item data-regs="gallery" data-text="sv-040 verdigris doll gallery three-d-material illustration poster card a hand-made doll with visible seams and paint, photographed with the soft, warm respect of a real portrait, seated against an empty ochre haze. teal, chartreuse and a touch of rust orange give it a quietly uncanny, melancholy feel. the style is treating a made object as if it were a real person sitting for a painter.
+
+**best for:** art prints, gallery pieces and portrait series across very different beings. **avoid:** glossy collectible renders, horror dolls, brass steampunk, busy backgrounds and cute faces. ai and humanity storytelling digital twins and personas culture and belonging posts workshop prompts on empathy"><td><a href="../s/sv-040-verdigris-doll.html">Verdigris Doll</a><br><span class="count">SV-040</span></td><td>Gallery</td><td>3D and material</td><td>illustration, poster, card</td><td>yes</td></tr></tbody></table></div></div><p id="empty" class="empty">No style matches.</p></div>
+</main>
+<footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
+and the topics it explains best. Finished pieces live in the
+<a href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">Worth a Thousand Words gallery</a>.</div></footer>
+<script>
+document.querySelectorAll('[data-view]').forEach(function(b){b.addEventListener('click',function(){
+var root=document.getElementById('lib');root.classList.toggle('view-list',b.dataset.view==='list');
+document.querySelectorAll('[data-view]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});});});
+var q=document.getElementById('q'),chips=document.querySelectorAll('[data-reg]'),reg='';
+function apply(){var t=(q&&q.value||'').toLowerCase().trim(),n=0;
+document.querySelectorAll('[data-item]').forEach(function(el){
+var ok=(!t||el.dataset.text.indexOf(t)>-1)&&(!reg||(' '+el.dataset.regs+' ').indexOf(' '+reg+' ')>-1);
+el.style.display=ok?'':'none';if(ok&&el.classList.contains('card'))n++;});
+var e=document.getElementById('empty');if(e)e.style.display=n?'none':'block';}
+if(q)q.addEventListener('input',apply);
+chips.forEach(function(c){c.addEventListener('click',function(){reg=reg===c.dataset.reg?'':c.dataset.reg;
+chips.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.reg===reg)});apply();});});
+var cp=document.querySelector('.copy');if(cp)cp.addEventListener('click',function(){
+navigator.clipboard.writeText(document.getElementById('json').innerText);cp.textContent='Copied';});
+</script>
+</body></html>

@@ -35,8 +35,7 @@ font-size:13px;cursor:pointer;color:var(--soft)}
 .chip[aria-pressed=true]{background:var(--plum);border-color:var(--plum);color:#fff}
 .tag{display:inline-block;font-size:12px;border-radius:999px;padding:2px 10px;margin:0 4px 4px 0;
 background:#f1edf3;color:var(--soft)}
-.tag.board{background:#eef2f7;color:#2c3e5c}.tag.bold{background:#fdeee7;color:#9a3412}
-.tag.creative{background:#f4edf7;color:#6b2e7a}
+.tag.boardroom{background:#eef2f7;color:#2c3e5c}.tag.stage{background:#fdeee7;color:#9a3412}.tag.feed{background:#e8f5ef;color:#1f6b4a}.tag.classroom{background:#fdf6e3;color:#8a5a00}.tag.team{background:#fde9ef;color:#9b2c55}.tag.gallery{background:#f4edf7;color:#6b2e7a}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
 text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .15s,transform .15s}
@@ -93,18 +92,16 @@ footer a{color:var(--plum)}
 <a class="toplink" href="https://phoebefu6.github.io/sketch-ideas-with-phoebe/">See the finished works</a>
 </div></header>
 <main class="wrap">
-<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-board.html">Board</a> / Glow Of The Documented</p><h1>Glow Of The Documented</h1><p class="lede">SV-054</p><div class="cols"><div><div class="hero"><img src="../assets/works/sv-054-own.jpg" alt="The data science lifecycle, set in Glow Of The Documented"></div><p class="cap">Example: The data science lifecycle, set in Glow Of The Documented</p><h2>In plain words</h2><p class="plain">A dark map or field where every item in a population is drawn in dull grey, and only the small share that is actually recorded glows in one bright colour. It feels quiet and slightly uneasy, because your eye keeps landing on all the grey. What makes it this style is that the missing majority is always drawn - the gap is the picture.
+<p class="crumb"><a href="../index.html">Style Vault</a> / <a href="../c/audience-boardroom.html">Boardroom</a> / Glow Of The Documented</p><h1>Glow Of The Documented</h1><p class="lede">SV-054</p><div class="cols"><div><div class="hero"><img src="../assets/works/sv-054-own.jpg" alt="The data science lifecycle, set in Glow Of The Documented"></div><p class="cap">Example: The data science lifecycle, set in Glow Of The Documented</p><h2>In plain words</h2><p class="plain">A dark map or field where every item in a population is drawn in dull grey, and only the small share that is actually recorded glows in one bright colour. It feels quiet and slightly uneasy, because your eye keeps landing on all the grey. What makes it this style is that the missing majority is always drawn - the gap is the picture.
 
 <strong>Best for:</strong> data catalogue coverage; model risk inventory; data governance maturity; audit and compliance gaps. <strong>Avoid:</strong> text or lettering generated inside the image.</p><h2>Topics it fits</h2><ul class="topics"><li><strong>Data catalogue coverage</strong><span>drawing every table in grey and lighting only the documented ones shows the undocumented estate as the real size of the problem</span></li><li><strong>Model risk inventory</strong><span>the full population of models stays on screen, so the few that are validated read as a measuring stick, not a success story</span></li><li><strong>Data governance maturity</strong><span>one glow colour against a grey mass lets a board see coverage at a glance without reading a single number</span></li><li><strong>Audit and compliance gaps</strong><span>negative space carries the argument, so the unchecked controls are impossible to hide behind a green dashboard</span></li></ul><h2>Art style and layout</h2><ul class="dna"><li><b>core locked</b> [dark_ground, one_luminous_accent_for_documented, desaturated_mass_for_undocumented, full_population_always_shown]</li><li><b>the tension</b> you must draw everything you DON&#x27;T have - the undocumented thousands are the subject, the glowing few are just the measuring stick</li></ul><h3>What must stay, what may change</h3><p>subject - any archive-gap dataset (documented vs undocumented anything); the presence/absence glow encoding stays</p><h2>As JSON</h2><p class="lede">Paste this into a prompt or a skill to reuse the style.</p><button class="copy">Copy</button><pre><code id="json">{
   &quot;id&quot;: &quot;SV-054&quot;,
   &quot;name&quot;: &quot;Glow Of The Documented&quot;,
   &quot;audience&quot;: [
-    &quot;board&quot;,
-    &quot;bold&quot;
+    &quot;boardroom&quot;
   ],
   &quot;category&quot;: [
-    &quot;data-viz&quot;,
-    &quot;graphic-design&quot;
+    &quot;data-viz&quot;
   ],
   &quot;format&quot;: [
     &quot;map&quot;,
@@ -134,7 +131,7 @@ footer a{color:var(--plum)}
       &quot;why&quot;: &quot;negative space carries the argument, so the unchecked controls are impossible to hide behind a green dashboard&quot;
     }
   ]
-}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag board">Board</span><span class="tag bold">Bold</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-data-viz.html">Data viz</a><a class="tag" href="../c/category-graphic-design.html">Graphic design</a></dd><dt>Good as</dt><dd>map, data-portrait</dd><dt>How it is made</dt><dd>design-build</dd></dl></aside></div>
+}</code></pre></div><aside class="side"><dl><dt>Audience</dt><dd><span class="tag boardroom">Boardroom</span></dd><dt>Category</dt><dd><a class="tag" href="../c/category-data-viz.html">Data viz</a></dd><dt>Good as</dt><dd>map, data-portrait</dd><dt>How it is made</dt><dd>design-build</dd></dl></aside></div>
 </main>
 <footer><div class="wrap">A visual style library by Phoebe Fu. Each style is a recipe: what must stay, what may change,
 and the topics it explains best. Finished pieces live in the
